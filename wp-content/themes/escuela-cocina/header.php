@@ -16,8 +16,8 @@
         <!-- Init display flex with class row -->
         <div class="row justify-content-center align-items-center">
           <div id="logo" class="col-md-4 col-8 mb-4 mb-md-0">
-            <a class="navbar-brand" href="index.html">
-              <img src="img/logo.svg" class="img-fluid" />
+            <a class="navbar-brand" href="<?php echo esc_url( home_url('/') ); ?>">
+              <img src="<?php echo get_template_directory_uri();?>/img/logo.svg" class="img-fluid" />
             </a>
           </div>
           <!-- logo -->
