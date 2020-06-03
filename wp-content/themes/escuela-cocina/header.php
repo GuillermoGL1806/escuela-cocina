@@ -33,18 +33,6 @@
                 <!-- responsive menu -->
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <!-- <div
-                id="mainNavbar"
-                class="collapse navbar-collapse justify-content-center justify-content-lg-end text-center text-uppercase"
-              >
-                <a href="nosotros.html" class="nav-link">Nosotros</a>
-                <a href="blog.html" class="nav-link active">Blog</a>
-                <a href="clases.html" class="nav-link">Clases</a>
-                <a href="galeria.html" class="nav-link">Galería</a>
-                <a href="contacto.html" class="nav-link">Contacto</a>
-              </div> -->
-              <!-- mainNavbar -->
-
               <?php
               $args = array(
                   'menu_class' => 'nav nav-justified flex-column flex-md-row text-center',
