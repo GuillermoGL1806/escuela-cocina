@@ -49,7 +49,7 @@
               $args = array(
                   'menu_class' => 'nav nav-justified flex-column flex-md-row text-center',
                   'container_id' => 'mainNavbar',
-                  'container_class' => 'collapse navbar-collapse justify-content-center',
+                  'container_class' => 'collapse navbar-collapse justify-content-center justify-content-lg-end text-uppercase text-center',
                   'theme_location' => 'main_menu'
               );
                 wp_nav_menu($args)

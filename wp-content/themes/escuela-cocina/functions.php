@@ -9,10 +9,18 @@ function edc_setup(){
 }
 add_action( 'after_setup_theme', 'edc_setup' );
 
+/* Add bootstrap's nav-link class to the main menu*/
+function edc_link_class($atts, $item, $args){
+    if($args->theme_location == 'main_menu'){
+        $atts['class'] = 'nav-link';
+    }
+    return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'edc_link_class', 10, 3 );
+
 /* 
 *   Load theme's CSS and Scritps
 */
-
 function edc_scripts(){
     /* Styles */
     wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css', false, '4.5.0');
