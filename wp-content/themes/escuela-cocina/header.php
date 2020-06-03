@@ -33,7 +33,7 @@
                 <!-- responsive menu -->
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <div
+              <!-- <div
                 id="mainNavbar"
                 class="collapse navbar-collapse justify-content-center justify-content-lg-end text-center text-uppercase"
               >
@@ -42,8 +42,19 @@
                 <a href="clases.html" class="nav-link">Clases</a>
                 <a href="galeria.html" class="nav-link">Galería</a>
                 <a href="contacto.html" class="nav-link">Contacto</a>
-              </div>
+              </div> -->
               <!-- mainNavbar -->
+
+              <?php
+              $args = array(
+                  'menu_class' => 'nav nav-justified flex-column flex-md-row text-center',
+                  'container_id' => 'mainNavbar',
+                  'container_class' => 'collapse navbar-collapse justify-content-center',
+                  'theme_location' => 'main_menu'
+              );
+                wp_nav_menu($args)
+              ?>
+
             </nav>
             <!-- navbar -->
           </div>

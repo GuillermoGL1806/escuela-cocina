@@ -1,8 +1,4 @@
 <?php
-/* 
-*   Load theme's CSS and Scritps
-*/
-
 
 /* Functions that loads when the theme is activated */
 function edc_setup(){
@@ -13,6 +9,9 @@ function edc_setup(){
 }
 add_action( 'after_setup_theme', 'edc_setup' );
 
+/* 
+*   Load theme's CSS and Scritps
+*/
 
 function edc_scripts(){
     /* Styles */
