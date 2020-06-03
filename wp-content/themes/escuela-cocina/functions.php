@@ -12,7 +12,7 @@ function edc_scripts(){
     /* Scripts */
     wp_enqueue_script('jquery');
     wp_enqueue_script('popper', get_template_directory_uri() . '/js/popper.min.js', array('jquery'), '2.4.0', true);
-    wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '4.5.0', true);
+    wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('popper'), '4.5.0', true);
 
 }
 add_action( 'wp_enqueue_scripts', 'edc_scripts' );
