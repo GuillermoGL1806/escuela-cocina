@@ -1,4 +1,9 @@
 <?php
+/* Add CMB2 */
+require_once dirname(__FILE__) . '/cmb2-functions.php';
+
+/* Load cutomized fields */
+require_once dirname(__FILE__) . '/inc/custom-fields.php';
 
 /* Functions that loads when the theme is activated */
 function edc_setup(){
