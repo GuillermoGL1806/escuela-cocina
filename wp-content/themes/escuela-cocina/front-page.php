@@ -1,59 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-    />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Escuela de Cocina</title>
-  </head>
-
-  <body class="index">
-    <header class="header py-5">
-      <!-- Top Navbar -->
-      <div class="container">
-        <div class="row justify-content-center align-items-center">
-          <div id="logo" class="col-md-4 col-8 mb-4 mb-md-0">
-            <a class="navbar-brand" href="index.html">
-              <img src="img/logo.svg" class="img-fluid" />
-            </a>
-          </div>
-          <!-- logo -->
-          <div id="menu" class="col-md-8">
-            <nav
-              class="navbar navbar-expand-md navbar-light justify-content-center"
-            >
-              <button
-                class="navbar-toggler mb-4"
-                data-toggle="collapse"
-                data-target="#mainNavbar"
-              >
-                <!-- responsive menu -->
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div
-                id="mainNavbar"
-                class="collapse navbar-collapse justify-content-center justify-content-lg-end text-center text-uppercase"
-              >
-                <a href="nosotros.html" class="nav-link">Nosotros</a>
-                <a href="blog.html" class="nav-link">Blog</a>
-                <a href="clases.html" class="nav-link">Clases</a>
-                <a href="galeria.html" class="nav-link">Galería</a>
-                <a href="contacto.html" class="nav-link">Contacto</a>
-              </div>
-              <!-- mainNavbar -->
-            </nav>
-            <!-- navbar -->
-          </div>
-          <!-- menu -->
-        </div>
-        <!-- row -->
-      </div>
-      <!-- container -->
-    </header>
+<?php get_header(); ?>
 
     <div class="container-fluid main-images">
       <div class="row top-image image">
@@ -351,34 +296,5 @@
       </div>
     </div>
 
-    <footer class="footer p-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <nav
-              class="nav text-uppercase d-flex flex-column flex-md-row text-center text-md-left"
-            >
-              <a href="nosotros.html" class="nav-link">Nosotros</a>
-              <a href="blog.html" class="nav-link">Blog</a>
-              <a href="clases.html" class="nav-link">Clases</a>
-              <a href="galeria.html" class="nav-link">Galería</a>
-              <a href="contacto.html" class="nav-link">Contacto</a>
-            </nav>
-          </div>
-          <!-- col-md-6 -->
-          <div class="col-md-6">
-            <p class="text-center text-md-right mt-4 mt-md-0 copyright">
-              Todos los derechos reservados
-            </p>
-          </div>
-          <!-- col-md-6 -->
-        </div>
-        <!-- row -->
-      </div>
-      <!-- container -->
-    </footer>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
-</html>
+<?php
+get_footer();
