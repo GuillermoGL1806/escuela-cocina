@@ -35,12 +35,12 @@ p {
   width: 100%;
   height: 100px;
   margin: 0 auto; /* align 0px in axis y and auto in axis x*/
-  background-image: url(../img/separador.png);
+  background-image: url(./img/separador.png);
   background-repeat: no-repeat;
   background-position: center center;
 }
 .inverse::after {
-  background-image: url(../img/separador-inverso.png);
+  background-image: url(./img/separador-inverso.png);
 }
 .btn-primary {
   background-color: var(--primario);
