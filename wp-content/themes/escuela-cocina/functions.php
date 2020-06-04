@@ -1,4 +1,6 @@
 <?php
+/* Agregar CMB2 */
+require_once dirname(__FILE__) . '/cmb2-functions.php';
 
 /* Functions that loads when the theme is activated */
 function edc_setup(){
