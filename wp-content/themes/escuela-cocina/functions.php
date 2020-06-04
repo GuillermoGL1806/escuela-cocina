@@ -5,6 +5,30 @@ require_once dirname(__FILE__) . '/cmb2-functions.php';
 /* Load cutomized fields */
 require_once dirname(__FILE__) . '/inc/custom-fields.php';
 
+/* Featured images for pages */
+add_action( 'init', 'edc_featured_image' );
+function edc_featured_image($id) {
+    $image = get_the_post_thumbnail_url($id, 'full');/* gets the image url in size full*/
+
+    $html = '';
+    if($image) {
+        $html .= '<div class="container">';
+        $html .=    '<div class="row outstandingImage"></div>';
+        $html .= '</div>';
+        /* Add inline css  */
+        wp_register_style('custom', false);
+        wp_enqueue_style( 'custom' );
+
+        /* creating css */
+        $featured_image_css = "
+                .outstandingImage {
+                    background-image: url({$image});
+                }
+        ";
+        wp_add_inline_style('custom', $featured_image_css);
+    }return $html;
+}
+
 /* Functions that loads when the theme is activated */
 function edc_setup(){
     /* Outstanding Image */

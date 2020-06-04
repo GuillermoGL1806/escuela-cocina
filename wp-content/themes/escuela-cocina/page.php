@@ -4,13 +4,7 @@ get_header();
 while (have_posts()) : the_post();
 ?>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-12 outstandingImage us-bg">
-            <?php the_post_thumbnail(); ?>
-        </div>
-      </div>
-    </div>
+    <?php echo edc_featured_image( get_the_ID() );?>
     <main class="container">
       <div class="row justify-content-center">
         <div id="Us" class="col-md-8 py-3 px-5 us-content bg-light shadow">

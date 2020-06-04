@@ -120,10 +120,6 @@ body.home .classes {
   height: 24rem;
   background-size: cover;
 }
-.us-bg {
-  background-image: url(../img/principal1.jpg);
-  background-repeat: no-repeat;
-}
 .us-content {
   margin-top: -5rem;
   border: 1px solid #e1e1e1;
@@ -182,18 +178,11 @@ blockquote.subtitle {
   font-weight: 500;
 }
 /* Single Class page */
-.class-bg {
-  background-image: url(../img/1.jpg);
-  background-repeat: no-repeat;
-}
 .instructor {
   font-size: 1.8rem;
   color: var(--primario);
 }
 /* Contact page */
-.contact-bg {
-  background-image: url(../img/principal2.jpg);
-}
 /* Footer */
 .footer {
   border-bottom: 10px solid var(--primario);
