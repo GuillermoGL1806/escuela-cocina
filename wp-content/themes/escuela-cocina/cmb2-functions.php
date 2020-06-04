@@ -484,7 +484,7 @@ function yourprefix_register_about_page_metabox() {
 		'priority'     => 'high',
 		'show_names'   => true, // Show field names on the left
 		'show_on'      => array(
-			'id' => array( 2 ),
+			'id' => array( 23 ),
 		), // Specific post IDs to display this metabox
 	) );
 
