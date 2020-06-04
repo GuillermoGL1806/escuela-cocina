@@ -6,7 +6,9 @@ while (have_posts()) : the_post();
 
     <div class="container">
       <div class="row">
-        <div class="col-12 outstandingImage us-bg"></div>
+        <div class="col-12 outstandingImage us-bg">
+            <?php the_post_thumbnail(); ?>
+        </div>
       </div>
     </div>
     <main class="container">
