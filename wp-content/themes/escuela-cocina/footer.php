@@ -22,7 +22,7 @@
           <!-- col-md-6 -->
           <div class="col-md-6">
             <p class="text-center text-md-right mt-4 mt-md-0 copyright">
-              Todos los derechos reservados <?php echo get_bloginfo($show, $filter) ;?> <?php echo date('Y'); ?>
+              Todos los derechos reservados <?php echo esc_html__( get_bloginfo($show, $filter) );?> <?php echo date('Y'); ?>
             </p>
           </div>
           <!-- col-md-6 -->
