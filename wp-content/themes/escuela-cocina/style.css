@@ -1,0 +1,225 @@
+/* 
+  Theme Name: Escuela Cocina
+  Theme URI: https://www.devitm.com/
+  Author: Marco Antonio Aspeitia Peña
+  Author URI: https://www.devitm.com/
+  Description: Tema para escuela de cocina
+  Version: 1.0
+  License: GNU General Public License v2 or later
+  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+  Tags: bootstrap, cmb2, movile-first, devitm, escuela-cocina
+  Text Domain: escuelacocina
+*/
+
+/* Global CSS */
+:root {
+  --primario: #f46669;
+  --secundario: #a1a045;
+  --gris: #f5f5f5;
+}
+body {
+  font-family: sans-serif;
+  color: #303030;
+}
+p {
+  font-weight: 300;
+  line-height: 2rem;
+  font-size: 1rem;
+}
+.bg-light {
+  background-color: white !important;
+}
+.divider::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100px;
+  margin: 0 auto; /* align 0px in axis y and auto in axis x*/
+  background-image: url(../img/separador.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.inverse::after {
+  background-image: url(../img/separador-inverso.png);
+}
+.btn-primary {
+  background-color: var(--primario);
+  border-color: var(--primario);
+}
+.btn-primary:hover {
+  background-color: #f54749;
+  border-color: #f54749;
+}
+.bg-primary,
+.list-group-item-primary {
+  background-color: var(--primario) !important;
+}
+.bg-secondary,
+.badge-secondary,
+.list-group-item-secondary {
+  background-color: var(--secundario) !important;
+}
+
+/* Header */
+.header .nav-link {
+  color: black;
+}
+.header .nav-link:hover {
+  color: var(--primario);
+}
+.header .nav-link.active {
+  color: var(--primario);
+  border-bottom: 2px solid var(--primario);
+}
+/* Home page */
+.image > div /* Only take the first div to apply changes */ {
+  height: 30rem;
+}
+@media (min-width: 768px) {
+  .image > div {
+    height: 45rem;
+  }
+}
+.bg-wine,
+.bg-food {
+  background-size: cover;
+  background-position: top center;
+}
+.bg-wine {
+  background-image: url(../img/principal1.jpg);
+}
+.bg-food {
+  background-image: url(../img/principal2.jpg);
+}
+.top-image .content {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+.bottom-image .content {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+@media (min-width: 768px) {
+  .bottom-image .bg-secondary {
+    order: 2; /* Invert the order of the row .bottom-image and put bg-secondary in the second col-md-6 instead of bg-food */
+  }
+}
+.index .classes {
+  background-color: var(--gris);
+}
+.school-subject {
+  background-image: url(../img/chef_bg.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+.school-subject .row {
+  height: 38rem;
+}
+.school-subject .content h2 {
+  font-weight: 700;
+}
+.display-4 {
+  font-size: 1.8rem;
+  line-height: 3rem;
+}
+
+/* Us page */
+.outstandingImage {
+  height: 24rem;
+  background-size: cover;
+}
+.us-bg {
+  background-image: url(../img/principal1.jpg);
+  background-repeat: no-repeat;
+}
+.us-content {
+  margin-top: -5rem;
+  border: 1px solid #e1e1e1;
+  position: relative;
+  z-index: 100;
+}
+.us .information h3 {
+  font-weight: 300;
+  font-size: 1.6rem;
+}
+aside a,
+aside a:hover {
+  color: white;
+}
+aside .card {
+  border: none;
+}
+aside .card-title {
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+aside .card-subtitle {
+  color: var(--primario);
+  font-weight: 500;
+}
+aside .card-footer {
+  background-color: var(--secundario);
+}
+aside .card-footer a {
+  color: black;
+}
+/* Blog page */
+blockquote.subtitle {
+  font-size: 1.5rem;
+  color: #303030;
+  font-style: italic;
+  font-weight: 100;
+  border-left: 2px solid var(--primario);
+}
+.postPreview a {
+  color: var(--primario);
+}
+.postContent .postMeta p {
+  font-weight: 700;
+}
+.postContent .postMeta span {
+  color: var(--primario);
+}
+/* Clases page */
+.card-title {
+  font-weight: 600;
+}
+.card-subtitle {
+  color: var(--primario);
+  font-weight: 500;
+}
+/* Single Class page */
+.class-bg {
+  background-image: url(../img/1.jpg);
+  background-repeat: no-repeat;
+}
+.instructor {
+  font-size: 1.8rem;
+  color: var(--primario);
+}
+/* Contact page */
+.contact-bg {
+  background-image: url(../img/principal2.jpg);
+}
+/* Footer */
+.footer {
+  border-bottom: 10px solid var(--primario);
+}
+.footer .container {
+  border-top: 1px solid var(--primario);
+  padding-top: 2rem;
+}
+.footer .nav-link {
+  color: black;
+}
+.footer .nav-link:hover {
+  color: var(--primario);
+}
+.footer .nav-link.active {
+  color: var(--primario);
+  border-bottom: 2px solid var(--primario);
+}
+.copyright {
+  font-weight: 700;
+}
