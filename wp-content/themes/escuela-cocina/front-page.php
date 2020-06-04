@@ -1,18 +1,18 @@
-<?php get_header(); ?>
-
+<?php get_header(); 
+  if (have_posts() ) :
+    while (have_posts()) : the_post();
+    $textHero1 = get_post_meta( get_the_ID(), 'homepage_top_text_1', true);
+    $textHero2 = get_post_meta( get_the_ID(), 'homepage_top_text_2', true);
+    $imageHero1 = get_post_meta( get_the_ID(), 'homepage_image_1', true);
+    $imageHero2 = get_post_meta( get_the_ID(), 'homepage_image_2', true);
+?>
     <div class="container-fluid main-images">
       <div class="row top-image image">
         <div class="col-md-6 bg-primary">
           <div class="row justify-content-center align-items-center h-100">
             <div class="col-sm-8 col-md-6">
               <div class="content text-center text-light py-3">
-                <h2 class="text-uppercase">
-                  20 años de expeciencia
-                </h2>
-                <p class="text-center text-light">
-                  Nos respaldan, siempre ofertando los mejores cursos para
-                  principiantes y expertos
-                </p>
+                <?php echo $textHero1 ?>
               </div>
               <!-- content -->
             </div>
@@ -21,7 +21,8 @@
           <!-- content row -->
         </div>
         <!-- col-md-6 -->
-        <div class="col-md-6 bg-wine"></div>
+        <div class="col-md-6 images-hero" style="background-image: url(<?php echo $imageHero1 ?>)">
+        </div>
       </div>
       <!-- main top row -->
       <div class="row bottom-image image">
@@ -29,15 +30,7 @@
           <div class="row justify-content-center align-items-center h-100">
             <div class="col-sm-8 col-md-6">
               <div class="content text-center py-3">
-                <h2 class="text-uppercase">
-                  sobre nosotros
-                </h2>
-                <p class="text-center">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Debitis saepe a at, facilis suscipit ducimus enim corporis
-                  recusandae animi ut, autem doloribus obcaecati maxime ipsa et
-                  atque voluptatibus nulla repellat.
-                </p>
+                <?php echo $textHero2?>
               </div>
               <!-- content -->
             </div>
@@ -46,7 +39,7 @@
           <!-- content row -->
         </div>
         <!-- col-md-6 -->
-        <div class="col-md-6 bg-food"></div>
+        <div class="col-md-6 images-hero" style="background-image: url(<?php echo $imageHero2 ?>)"></div>
       </div>
       <!-- main bottom row -->
     </div>
@@ -297,4 +290,6 @@
     </div>
 
 <?php
+  endwhile;
+endif;
 get_footer();

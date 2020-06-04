@@ -80,16 +80,9 @@ p {
     height: 45rem;
   }
 }
-.bg-wine,
-.bg-food {
+.images-hero {
   background-size: cover;
   background-position: top center;
-}
-.bg-wine {
-  background-image: url(../img/principal1.jpg);
-}
-.bg-food {
-  background-image: url(../img/principal2.jpg);
 }
 .top-image .content {
   border-top: 1px solid white;
