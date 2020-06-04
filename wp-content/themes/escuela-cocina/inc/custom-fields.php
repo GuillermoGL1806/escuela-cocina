@@ -56,5 +56,22 @@ function edc_home_fields() {
         'id'   => $customPrefix . 'image_2',
         'type' => 'file',
     ) );
-
+    
+    /* School text field */
+    $edc_home_fields->add_field( array(
+        'name'    => esc_html__( 'Bottom text', 'cmb2' ),
+        'desc'    => esc_html__( 'Texto para la parte inferior del sitio web', 'cmb2' ),
+        'id'      => $customPrefix . 'bottom_text',
+        'type'    => 'wysiwyg',
+        'options' => array(
+            'textarea_rows' => 5,
+        ),
+    ) );
+    /* School Image */
+    $edc_home_fields->add_field( array(
+        'name' => esc_html__( 'Bottom image', 'cmb2' ),
+        'desc' => esc_html__( 'Bottom image with text over it', 'cmb2' ),
+        'id'   => $customPrefix . 'bottom_image',
+        'type' => 'file',
+    ) );
 }

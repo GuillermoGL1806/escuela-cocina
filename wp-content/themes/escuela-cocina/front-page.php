@@ -5,6 +5,8 @@
     $textHero2 = get_post_meta( get_the_ID(), 'homepage_top_text_2', true);
     $imageHero1 = get_post_meta( get_the_ID(), 'homepage_image_1', true);
     $imageHero2 = get_post_meta( get_the_ID(), 'homepage_image_2', true);
+    $bottomText = get_post_meta( get_the_ID(), 'homepage_bottom_text', true);
+    $bottomImage = get_post_meta( get_the_ID(), 'homepage_bottom_image', true);
 ?>
     <div class="container-fluid main-images">
       <div class="row top-image image">
@@ -271,18 +273,13 @@
     </section>
     <!-- section classes -->
 
-    <div class="school-subject">
+    <div class="school-subject" style="background-image: url(<?php echo $bottomImage ?>)">
       <div class="container">
         <div class="row justify-content-center align-items-center">
           <div class="col-md-8">
             <div class="content text-center text-light">
-              <h2>¿Quieres ser chef?</h2>
-              <p class="display-4">
-                Estudia la licenciatura para convertirte en un Chef profesional
-              </p>
-              <a href="contacto.html" class="btn btn-primary text-light"
-                >Más información</a
-              >
+              <?php echo $bottomText ?>
+              <a href="contacto.html" class="btn btn-primary text-light">Más información</a>
             </div>
           </div>
         </div>

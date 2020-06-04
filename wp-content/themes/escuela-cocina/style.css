@@ -101,7 +101,6 @@ body.home .classes {
   background-color: var(--gris);
 }
 .school-subject {
-  background-image: url(../img/chef_bg.jpg);
   background-size: cover;
   background-position: center center;
 }
