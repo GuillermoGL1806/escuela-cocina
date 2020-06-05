@@ -115,12 +115,12 @@ body.home .classes {
   line-height: 3rem;
 }
 
-/* Us page */
+/* Page.php */
 .outstandingImage {
   height: 24rem;
   background-size: cover;
 }
-.us-content {
+.page-content {
   margin-top: -5rem;
   border: 1px solid #e1e1e1;
   position: relative;

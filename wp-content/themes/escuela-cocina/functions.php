@@ -11,7 +11,9 @@ function edc_featured_image($id) {
     $image = get_the_post_thumbnail_url($id, 'full');/* gets the image url in size full*/
 
     $html = '';
+    $clase = false;
     if($image) {
+        $clase = true;
         $html .= '<div class="container">';
         $html .=    '<div class="row outstandingImage"></div>';
         $html .= '</div>';
@@ -26,7 +28,7 @@ function edc_featured_image($id) {
                 }
         ";
         wp_add_inline_style('custom', $featured_image_css);
-    }return $html;
+    }return array($html, $clase);
 }
 
 /* Functions that loads when the theme is activated */
