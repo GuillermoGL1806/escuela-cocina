@@ -15,7 +15,7 @@ function edc_featured_image($id) {
     if($image) {
         $clase = true;
         $html .= '<div class="container">';
-        $html .=    '<div class="row outstandingImage"></div>';
+        $html .=    '<div class="row featured-image"></div>';
         $html .= '</div>';
         /* Add inline css  */
         wp_register_style('custom', false);
@@ -23,7 +23,7 @@ function edc_featured_image($id) {
 
         /* creating css */
         $featured_image_css = "
-                .outstandingImage {
+                .featured-image {
                     background-image: url({$image});
                 }
         ";
@@ -33,7 +33,7 @@ function edc_featured_image($id) {
 
 /* Functions that loads when the theme is activated */
 function edc_setup(){
-    /* Outstanding Image */
+    /* Featured Image */
     add_theme_support( 'post-thumbnails' );
 
     /* Nav Menus */
