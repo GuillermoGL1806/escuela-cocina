@@ -67,7 +67,7 @@ p {
 .header .nav-link:hover {
   color: var(--primario);
 }
-.header .nav-link.active {
+.header .current_page_item .nav-link {
   color: var(--primario);
   border-bottom: 2px solid var(--primario);
 }
