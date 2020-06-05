@@ -35,12 +35,12 @@ p {
   width: 100%;
   height: 100px;
   margin: 0 auto; /* align 0px in axis y and auto in axis x*/
-  background-image: url(../img/separador.png);
+  background-image: url(./img/separador.png);
   background-repeat: no-repeat;
   background-position: center center;
 }
 .inverse::after {
-  background-image: url(../img/separador-inverso.png);
+  background-image: url(./img/separador-inverso.png);
 }
 .btn-primary {
   background-color: var(--primario);
@@ -67,7 +67,7 @@ p {
 .header .nav-link:hover {
   color: var(--primario);
 }
-.header .nav-link.active {
+.header .current_page_item .nav-link {
   color: var(--primario);
   border-bottom: 2px solid var(--primario);
 }
@@ -80,16 +80,9 @@ p {
     height: 45rem;
   }
 }
-.bg-wine,
-.bg-food {
+.images-hero {
   background-size: cover;
   background-position: top center;
-}
-.bg-wine {
-  background-image: url(../img/principal1.jpg);
-}
-.bg-food {
-  background-image: url(../img/principal2.jpg);
 }
 .top-image .content {
   border-top: 1px solid white;
@@ -104,11 +97,10 @@ p {
     order: 2; /* Invert the order of the row .bottom-image and put bg-secondary in the second col-md-6 instead of bg-food */
   }
 }
-.index .classes {
+body.home .classes {
   background-color: var(--gris);
 }
 .school-subject {
-  background-image: url(../img/chef_bg.jpg);
   background-size: cover;
   background-position: center center;
 }
@@ -123,16 +115,12 @@ p {
   line-height: 3rem;
 }
 
-/* Us page */
+/* Page.php */
 .outstandingImage {
   height: 24rem;
   background-size: cover;
 }
-.us-bg {
-  background-image: url(../img/principal1.jpg);
-  background-repeat: no-repeat;
-}
-.us-content {
+.page-content {
   margin-top: -5rem;
   border: 1px solid #e1e1e1;
   position: relative;
@@ -190,18 +178,11 @@ blockquote.subtitle {
   font-weight: 500;
 }
 /* Single Class page */
-.class-bg {
-  background-image: url(../img/1.jpg);
-  background-repeat: no-repeat;
-}
 .instructor {
   font-size: 1.8rem;
   color: var(--primario);
 }
 /* Contact page */
-.contact-bg {
-  background-image: url(../img/principal2.jpg);
-}
 /* Footer */
 .footer {
   border-bottom: 10px solid var(--primario);

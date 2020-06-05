@@ -9,7 +9,7 @@
     <?php   wp_head();   ?>
   </head>
 
-  <body>
+  <body <?php body_class(); ?>>
   <header class="header py-5">
       <!-- Top Navbar -->
       <div class="container">
