@@ -100,6 +100,13 @@ function edc_icon_section() {
 			'value'    => 'page-icons.php'
 		),  // Specific post IDs to display this metabox
 	) );
+    
+    $edc_icons->add_field( array(
+        'name'    => esc_html__( 'Title Section Icons', 'cmb2' ),
+        'desc'    => esc_html__( 'Add a title for the section', 'cmb2' ),
+        'id'      => $groupPrefix . 'icon_title',
+        'type'    => 'text',
+    ) );
 
 	// $group_field_id is the field id string, so in this case: 'yourprefix_group_demo'
 	$group_field_id = $edc_icons->add_field( array(
