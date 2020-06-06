@@ -1,4 +1,4 @@
-<?php printf ('<pre>%s</pre>', var_export(get_post_custom( get_the_ID()), true) );
+<?php
     $title = get_post_meta( get_the_ID() , 'edc_group_icon_title', true);/* bring the metabox title */
     $iconsInformation = get_post_meta( get_the_ID() , 'edc_group_icons', true);/* bring the metabox group */
 ?>
