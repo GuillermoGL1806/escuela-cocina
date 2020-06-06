@@ -1,6 +1,11 @@
+<?php printf ('<pre>%s</pre>', var_export(get_post_custom( get_the_ID()), true) );
+    $title = get_post_meta( get_the_ID() , 'edc_group_icon_title', true);/* bring the metabox title */
+    
+?>
+
 <section class="us mt-5 container">
     <h2 class="text-center mb-5 divider">
-        ¿Por qué estudiar con nosotros?
+        <?php echo $title ?>
     </h2>
     <div class="row">
         <div class="col-md-4 text-center information">

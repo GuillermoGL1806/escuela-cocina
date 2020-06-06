@@ -110,7 +110,7 @@ function edc_icon_section() {
 
 	// $group_field_id is the field id string, so in this case: 'yourprefix_group_demo'
 	$group_field_id = $edc_icons->add_field( array(
-		'id'          => $groupPrefix . 'us',
+		'id'          => $groupPrefix . 'icons',
 		'type'        => 'group',
 		'description' => esc_html__( 'Add options if is necessary', 'cmb2' ),
 		'options'     => array(
