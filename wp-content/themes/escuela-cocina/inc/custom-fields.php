@@ -123,7 +123,8 @@ function edc_icon_section() {
 	 * The parent field's id needs to be passed as the first argument.
 	 */
 	$edc_icons->add_group_field( $group_field_id, array(
-		'name'       => esc_html__( 'Icon Title', 'cmb2' ),
+        'name'       => esc_html__( 'Icon Title', 'cmb2' ),
+        'description' => esc_html__( 'Add a title for this icon', 'cmb2' ),
 		'id'         => 'title_icon',
 		'type'       => 'text',
 		// 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
@@ -137,7 +138,8 @@ function edc_icon_section() {
 	) );
 
 	$edc_icons->add_group_field( $group_field_id, array(
-		'name' => esc_html__( 'Icon Image', 'cmb2' ),
+        'name' => esc_html__( 'Icon Image', 'cmb2' ),
+        'description' => esc_html__( 'Add an image for this icon', 'cmb2' ),
 		'id'   => 'image_icon',
 		'type' => 'file',
 	) );
