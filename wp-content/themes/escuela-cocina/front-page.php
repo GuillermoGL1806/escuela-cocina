@@ -49,7 +49,12 @@
 </div>
 <!-- main container-fluid -->
 
-
+<?php /* create a custom query to get pagename Nosotros and display the content that we want of it */
+    $nosotros = new WP_Query('pagename=nosotros');
+    while($nosotros->have_posts()): $nosotros->the_post(  );
+    get_template_part('template', 'parts/icons');
+    endwhile; wp_reset_postdata();
+?>
 
 <div class="school-subject" style="background-image: url(<?php echo $bottomImage ?>)">
     <div class="container">
@@ -64,7 +69,7 @@
         </div>
     </div>
 </div>
-
+<!-- school-subject -->
 <?php
   endwhile;
 endif;
