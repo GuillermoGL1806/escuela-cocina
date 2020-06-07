@@ -163,10 +163,10 @@ blockquote.subtitle {
 .post-preview a {
   color: var(--primario);
 }
-.post-content .postMeta p {
+.post-content .post-meta p {
   font-weight: 700;
 }
-.post-content .postMeta span {
+.post-content .post-meta span {
   color: var(--primario);
 }
 /* Clases page */

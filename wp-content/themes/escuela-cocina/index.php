@@ -29,18 +29,20 @@
                         <a href="entrada.html">
                             <h3><?php the_title(); ?></h3>
                         </a>
-                        <div class="meta pt-2 pt-md-0">
+                        <div class="post-meta pt-2 pt-md-0">
                             <p class="m-0">
-                                Escrito el: <span> 20 / 12 /20 </span>por <a href="#"><?php the_author(); ?></a>
+                                Escrito el: <span>
+                                    <?php the_time(get_option('date_format')); /* insert the date in all posts */?>
+                                </span>por
+                                <a
+                                    href="<?php echo get_author_posts_url(get_the_author_meta('ID'), get_the_author_meta('user_nicename') ); ?>"><?php the_author(); ?></a>
                             </p>
                         </div>
-                        <!-- meta data post-content -->
+                        <!-- post-meta -->
                         <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium minus ducimus illum
-                            nemo sapiente sequi voluptatum porro quam unde dolor aliquid ipsa doloribus magni, omnis
-                            corporis modi vitae ad neque!
+                            <?php the_excerpt();?>
                         </p>
-                        <a href="entrada.html" class="btn btn-primary text-light">Ver entrada</a>
+                        <a href="<?php the_permalink(); ?>" class="btn btn-primary text-light">Ver entrada</a>
                     </div>
                     <!-- post-content -->
                 </div>
