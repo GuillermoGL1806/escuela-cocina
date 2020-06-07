@@ -17,90 +17,37 @@
             <h1 class="divider text-center mb-3">
                 Nuestro Blog
             </h1>
-            <div class="row mb-4 postPreview">
+
+            <?php while(have_posts()): the_post();?>
+            <div class="row mb-4 post-preview">
                 <div class="col-md-4">
-                    <img src="img/clase1.jpg" alt="imagen de blog" class="img-fluid" />
+                    <?php the_post_thumbnail('mediano', array('class' => 'img-fluid')); ?>
                 </div>
                 <!-- col-md-4 image -->
                 <div class="col-md-8">
-                    <div class="postContent pt-4 pt-md-0">
+                    <div class="post-content pt-4 pt-md-0">
                         <a href="entrada.html">
-                            <h3>Título de la entrada</h3>
-                        </a>
-                        <div class="postMeta pt-2 pt-md-0">
-                            <p class="m-0">
-                                Escrito el: <span>20/10/18 </span>por <a href="#">Admin</a>
-                            </p>
-                        </div>
-                        <!-- metadata postContent -->
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Exercitationem non animi voluptas fugiat iusto consectetur
-                            voluptate sint!
-                        </p>
-                        <a href="entrada.html" class="btn btn-primary text-light">Ver entrada</a>
-                    </div>
-                    <!-- postContent -->
-                </div>
-                <!-- col-md-8 -->
-            </div>
-            <!-- row post -->
-            <div class="row mb-4 postPreview">
-                <div class="col-md-4">
-                    <img src="img/clase1.jpg" alt="imagen de blog" class="img-fluid" />
-                </div>
-                <!-- col-md-4 image -->
-                <div class="col-md-8">
-                    <div class="postContent pt-4 pt-md-0">
-                        <a href="entrada.html">
-                            <h3>Título de la entrada</h3>
+                            <h3><?php the_title(); ?></h3>
                         </a>
                         <div class="meta pt-2 pt-md-0">
                             <p class="m-0">
-                                Escrito el: <span>20/10/18 </span>por <a href="#">Admin</a>
+                                Escrito el: <span> 20 / 12 /20 </span>por <a href="#"><?php the_author(); ?></a>
                             </p>
                         </div>
-                        <!-- meta data postContent -->
+                        <!-- meta data post-content -->
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Exercitationem non animi voluptas fugiat iusto consectetur
-                            voluptate sint!
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium minus ducimus illum
+                            nemo sapiente sequi voluptatum porro quam unde dolor aliquid ipsa doloribus magni, omnis
+                            corporis modi vitae ad neque!
                         </p>
                         <a href="entrada.html" class="btn btn-primary text-light">Ver entrada</a>
                     </div>
-                    <!-- postContent -->
-                </div>
-                <!-- col-md-8 -->
-            </div>
-            <!-- row post -->
-            <div class="row mb-4 postPreview">
-                <div class="col-md-4">
-                    <img src="img/clase1.jpg" alt="imagen de blog" class="img-fluid" />
-                </div>
-                <!-- col-md-4 image -->
-                <div class="col-md-8">
-                    <div class="postContent pt-4 pt-md-0">
-                        <a href="entrada.html">
-                            <h3>Título de la entrada</h3>
-                        </a>
-                        <div class="meta pt-2 pt-md-0">
-                            <p class="m-0">
-                                Escrito el: <span>20/10/18 </span>por <a href="#">Admin</a>
-                            </p>
-                        </div>
-                        <!-- meta data postContent -->
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Exercitationem non animi voluptas fugiat iusto consectetur
-                            voluptate sint!
-                        </p>
-                        <a href="entrada.html" class="btn btn-primary text-light">Ver entrada</a>
-                    </div>
-                    <!-- postContent -->
+                    <!-- post-content -->
                 </div>
                 <!-- col-md-8 -->
             </div>
             <!-- row postPreview -->
+            <?php endwhile; ?>
         </main>
 
         <aside class="col-lg-3 col-md-4 bg-primary p-4">

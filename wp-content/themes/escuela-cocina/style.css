@@ -160,13 +160,13 @@ blockquote.subtitle {
   font-weight: 100;
   border-left: 2px solid var(--primario);
 }
-.postPreview a {
+.post-preview a {
   color: var(--primario);
 }
-.postContent .postMeta p {
+.post-content .postMeta p {
   font-weight: 700;
 }
-.postContent .postMeta span {
+.post-content .postMeta span {
   color: var(--primario);
 }
 /* Clases page */
