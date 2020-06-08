@@ -158,3 +158,34 @@ function edc_icon_section() {
 	) ); */
 
 }
+
+/* Blog */
+
+add_action( 'cmb2_admin_init', 'edc_blog_fields' );
+
+function edc_blog_fields() {
+    $customPrefix = 'edc_blog_';
+    $id_blog = get_option('page_for_posts');
+    /**
+     * Metabox to be displayed on a single page ID
+     */
+    $edc_home_fields = new_cmb2_box( array(
+        
+        'id'           => $customPrefix . 'metabox',
+        'title'        => esc_html__( 'Blog fields', 'cmb2' ),
+        'object_types' => array( 'page' ), // Post type
+        'context'      => 'normal',
+        'priority'     => 'high',
+        'show_names'   => true, // Show field names on the left
+        'show_on'      => array(
+            'id' => array( $id_blog ),
+        ), // Specific post IDs to display this metabox
+    ) );
+    /* Title field */
+    $edc_home_fields->add_field( array(
+        'name'    => esc_html__( 'Slogan tittle', 'cmb2' ),
+        'desc'    => esc_html__( 'Slogan para la parte superior de la página', 'cmb2' ),
+        'id'      => $customPrefix . 'top_slogan',
+        'type'    => 'text',
+    ) );
+}
