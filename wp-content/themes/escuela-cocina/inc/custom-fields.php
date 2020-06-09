@@ -181,11 +181,28 @@ function edc_blog_fields() {
             'id' => array( $id_blog ),
         ), // Specific post IDs to display this metabox
     ) );
-    /* Title field */
+    /* Slogan field */
     $edc_home_fields->add_field( array(
-        'name'    => esc_html__( 'Slogan tittle', 'cmb2' ),
+        'name'    => esc_html__( 'Slogan title', 'cmb2' ),
         'desc'    => esc_html__( 'Slogan para la parte superior de la página', 'cmb2' ),
         'id'      => $customPrefix . 'top_slogan',
         'type'    => 'text',
+    ) );
+    /* Title field */
+    $edc_home_fields->add_field( array(
+        'name'    => esc_html__( 'Page title', 'cmb2' ),
+        'desc'    => esc_html__( 'Nombre a mostrar en el Blog', 'cmb2' ),
+        'id'      => $customPrefix . 'top_title',
+        'type'    => 'text',
+    ) );
+    /* First text field */
+    $edc_home_fields->add_field( array(
+        'name'    => esc_html__( 'No posts description', 'cmb2' ),
+        'desc'    => esc_html__( 'Texto a mostrar si no hay contenido de blog posts', 'cmb2' ),
+        'id'      => $customPrefix . 'no_posts',
+        'type'    => 'wysiwyg',
+        'options' => array(
+            'textarea_rows' => 5,
+        ),
     ) );
 }

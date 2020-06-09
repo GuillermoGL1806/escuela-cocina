@@ -1,10 +1,11 @@
-<?php get_header(); ?>
+<?php get_header(); 
+    $id_blog = get_option('page_for_posts');
+?>
 <div class="container mb-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <blockquote class="text-center pl-3 subtitle">
                 <?php
-                    $id_blog = get_option('page_for_posts');
                     echo get_post_meta($id_blog, 'edc_blog_top_slogan', true);
                 ?>
             </blockquote>
@@ -18,10 +19,14 @@
     <div class="row">
         <main class="col-lg-9 col-md-8">
             <h1 class="divider text-center mb-3">
-                Nuestro Blog
+                <?php
+                    echo get_post_meta($id_blog, 'edc_blog_top_title', true);
+                ?>
             </h1>
 
-            <?php while(have_posts()): the_post();?>
+            <?php if(have_posts()):
+            
+            while(have_posts()): the_post();?>
             <div class="row mb-4 post-preview">
                 <div class="col-md-4">
                     <?php the_post_thumbnail('mediano', array('class' => 'img-fluid')); ?>
@@ -53,8 +58,16 @@
             </div>
             <!-- row postPreview -->
             <?php endwhile; ?>
+            <?php else : ?>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <p>
+                        <?php echo get_post_meta($id_blog, 'edc_blog_no_posts', true); ?>
+                    </p>
+                </div>
+            </div>
+            <?php endif; ?>
         </main>
-
         <?php get_sidebar(); ?>
     </div>
     <!-- main row -->
