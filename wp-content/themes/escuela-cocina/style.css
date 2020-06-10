@@ -177,10 +177,20 @@ blockquote.subtitle {
   color: var(--primario);
   font-weight: 500;
 }
+
 /* Single Class page */
 .instructor {
   font-size: 1.8rem;
   color: var(--primario);
+}
+.page-link,
+.page-item a {
+  color: var(--primario);
+  text-decoration: none !important;
+}
+.page-link:hover {
+  background-color: var(--primario) !important;
+  color: white !important;
 }
 /* Contact page */
 /* Footer */

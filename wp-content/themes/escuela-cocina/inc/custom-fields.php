@@ -31,6 +31,7 @@ function edc_home_fields() {
             'textarea_rows' => 5,
         ),
     ) );
+    
     /* First Image */
     $edc_home_fields->add_field( array(
         'name' => esc_html__( 'Imagen hero 1', 'cmb2' ),
@@ -49,6 +50,7 @@ function edc_home_fields() {
             'textarea_rows' => 5,
         ),
     ) );
+    
     /* Second Image */
     $edc_home_fields->add_field( array(
         'name' => esc_html__( 'Imagen hero 2', 'cmb2' ),
@@ -67,6 +69,7 @@ function edc_home_fields() {
             'textarea_rows' => 5,
         ),
     ) );
+
     /* School Image */
     $edc_home_fields->add_field( array(
         'name' => esc_html__( 'Bottom image', 'cmb2' ),
@@ -195,7 +198,7 @@ function edc_blog_fields() {
         'id'      => $customPrefix . 'top_title',
         'type'    => 'text',
     ) );
-    /* First text field */
+    /* No posts text field */
     $edc_home_fields->add_field( array(
         'name'    => esc_html__( 'No posts description', 'cmb2' ),
         'desc'    => esc_html__( 'Texto a mostrar si no hay contenido de blog posts', 'cmb2' ),
