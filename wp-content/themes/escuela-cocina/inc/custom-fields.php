@@ -31,6 +31,7 @@ function edc_home_fields() {
             'textarea_rows' => 5,
         ),
     ) );
+    
     /* First Image */
     $edc_home_fields->add_field( array(
         'name' => esc_html__( 'Imagen hero 1', 'cmb2' ),
@@ -49,6 +50,7 @@ function edc_home_fields() {
             'textarea_rows' => 5,
         ),
     ) );
+    
     /* Second Image */
     $edc_home_fields->add_field( array(
         'name' => esc_html__( 'Imagen hero 2', 'cmb2' ),
@@ -67,6 +69,7 @@ function edc_home_fields() {
             'textarea_rows' => 5,
         ),
     ) );
+
     /* School Image */
     $edc_home_fields->add_field( array(
         'name' => esc_html__( 'Bottom image', 'cmb2' ),
@@ -157,4 +160,52 @@ function edc_icon_section() {
 		'type' => 'text',
 	) ); */
 
+}
+
+/* Blog */
+
+add_action( 'cmb2_admin_init', 'edc_blog_fields' );
+
+function edc_blog_fields() {
+    $customPrefix = 'edc_blog_';
+    $id_blog = get_option('page_for_posts');
+    /**
+     * Metabox to be displayed on a single page ID
+     */
+    $edc_home_fields = new_cmb2_box( array(
+        
+        'id'           => $customPrefix . 'metabox',
+        'title'        => esc_html__( 'Blog fields', 'cmb2' ),
+        'object_types' => array( 'page' ), // Post type
+        'context'      => 'normal',
+        'priority'     => 'high',
+        'show_names'   => true, // Show field names on the left
+        'show_on'      => array(
+            'id' => array( $id_blog ),
+        ), // Specific post IDs to display this metabox
+    ) );
+    /* Slogan field */
+    $edc_home_fields->add_field( array(
+        'name'    => esc_html__( 'Slogan title', 'cmb2' ),
+        'desc'    => esc_html__( 'Slogan para la parte superior de la página', 'cmb2' ),
+        'id'      => $customPrefix . 'top_slogan',
+        'type'    => 'text',
+    ) );
+    /* Title field */
+    $edc_home_fields->add_field( array(
+        'name'    => esc_html__( 'Page title', 'cmb2' ),
+        'desc'    => esc_html__( 'Nombre a mostrar en el Blog', 'cmb2' ),
+        'id'      => $customPrefix . 'top_title',
+        'type'    => 'text',
+    ) );
+    /* No posts text field */
+    $edc_home_fields->add_field( array(
+        'name'    => esc_html__( 'No posts description', 'cmb2' ),
+        'desc'    => esc_html__( 'Texto a mostrar si no hay contenido de blog posts', 'cmb2' ),
+        'id'      => $customPrefix . 'no_posts',
+        'type'    => 'wysiwyg',
+        'options' => array(
+            'textarea_rows' => 5,
+        ),
+    ) );
 }

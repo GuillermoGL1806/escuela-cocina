@@ -33,6 +33,9 @@ function edc_featured_image($id) {
 
 /* Functions that loads when the theme is activated */
 function edc_setup(){
+    /* Defining images size */
+    add_image_size( 'mediano', 510, 340, true );
+
     /* Featured Image */
     add_theme_support( 'post-thumbnails' );
 
