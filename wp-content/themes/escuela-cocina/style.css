@@ -176,7 +176,10 @@ blockquote.subtitle {
   background-color: white;
   padding: 2rem;
 }
-
+.comments-form .logged-in-as a,
+.comments-form #cancel-comment-reply-link {
+  color: black;
+}
 .comment-form-comment,
 .comment-form-author,
 .comment-form-email,
@@ -187,12 +190,30 @@ blockquote.subtitle {
 .comment-respond a {
   color: var(--primario);
 }
+.comment-respond .submit {
+  background-color: var(--primario);
+  border: none;
+  border-radius: 3px;
+  padding: 0.5rem;
+  color: white;
+  width: 100%;
+}
+.comment-respond .submit:hover {
+  background-color: #f54749;
+}
 .comment-list .comment-body {
   padding: 2rem;
   margin-bottom: 1rem;
   border-radius: 3px;
   background-color: white;
   box-shadow: 0 4px 9px 0 rgba(67, 65, 79, 0.1);
+}
+.comment-list .comment-body a {
+  color: black;
+  font-weight: 700;
+}
+.comment-list .comment-body .reply a {
+  color: var(--primario);
 }
 .comment-list .children {
   list-style: none;

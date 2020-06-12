@@ -3,7 +3,7 @@ get_header();
 while (have_posts()) : the_post();
     get_template_part('template-parts/content', 'post');
 ?>
-<section class="comments-section py-5">
+<section class="comments-section py-md-5">
     <div class="container comments">
         <?php
         if(comments_open() || get_comments_number()):
