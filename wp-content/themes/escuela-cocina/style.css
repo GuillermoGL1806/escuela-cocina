@@ -169,6 +169,34 @@ blockquote.subtitle {
 .post-content .post-meta span {
   color: var(--primario);
 }
+.comments-section {
+  background-color: #f5f5f5;
+}
+.comments-form {
+  background-color: white;
+  padding: 2rem;
+}
+
+.comment-form-comment,
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+  display: flex;
+  flex-direction: column;
+}
+.comment-respond a {
+  color: var(--primario);
+}
+.comment-list .comment-body {
+  padding: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 0 4px 9px 0 rgba(67, 65, 79, 0.1);
+}
+.comment-list .children {
+  list-style: none;
+}
 /* Clases page */
 .card-title {
   font-weight: 600;

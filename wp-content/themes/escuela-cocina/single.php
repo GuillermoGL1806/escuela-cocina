@@ -3,15 +3,17 @@ get_header();
 while (have_posts()) : the_post();
     get_template_part('template-parts/content', 'post');
 ?>
-<div class="container comments">
-    <?php
+<section class="comments-section py-5">
+    <div class="container comments">
+        <?php
         if(comments_open() || get_comments_number()):
             comments_template();
         else:
             echo "<p class='text-center'>Comentarios deshabilitados</p>";
         endif;
     ?>
-</div>
+    </div>
+</section>
 
 <?php
 endwhile;
