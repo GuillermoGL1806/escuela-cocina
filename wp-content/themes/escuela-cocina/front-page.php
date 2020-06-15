@@ -11,7 +11,7 @@
     $contacto = get_page_by_title('Contacto');
 ?>
 <div class="container-fluid main-images">
-    <div class="row top-image image">
+    <div class="row first-top-image image">
         <div class="col-md-6 bg-primary">
             <div class="row justify-content-center align-items-center h-100">
                 <div class="col-sm-8 col-md-6">
@@ -28,8 +28,8 @@
         <div class="col-md-6 images-hero" style="background-image: url(<?php echo $imageHero1; ?>)">
         </div>
     </div>
-    <!-- main top row -->
-    <div class="row bottom-image image">
+    <!-- main first top row -->
+    <div class="row second-top-image image">
         <div class="col-md-6 bg-secondary">
             <div class="row justify-content-center align-items-center h-100">
                 <div class="col-sm-8 col-md-6">
@@ -45,7 +45,7 @@
         <!-- col-md-6 -->
         <div class="col-md-6 images-hero" style="background-image: url(<?php echo $imageHero2; ?>)"></div>
     </div>
-    <!-- main bottom row -->
+    <!-- main second top row -->
 </div>
 <!-- main container-fluid -->
 
