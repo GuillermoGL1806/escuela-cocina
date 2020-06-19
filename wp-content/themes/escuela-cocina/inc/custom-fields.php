@@ -209,3 +209,31 @@ function edc_blog_fields() {
         ),
     ) );
 }
+
+/* Add fields to class post type */
+add_action( 'cmb2_admin_init', 'edc_fields_classes' );
+/**
+ * Hook in and add a metabox to demonstrate repeatable grouped fields
+ */
+function edc_fields_classes() {
+    $groupPrefix = 'edc_classes_';
+
+	/**
+	 * Repeatable Field Groups
+	 */
+	$edc_classes = new_cmb2_box( array(
+		'id'           => $groupPrefix . 'metabox',
+		'title'        => esc_html__( 'Classes description and information', 'cmb2' ),
+        'object_types' => array( 'clases_cocina' ), // Post type
+        'context'      => 'normal',
+		'priority'     => 'high',
+		'show_names'   => true, // Show field names on the left
+    ) );
+
+    $edc_classes->add_field( array(
+        'name'    => esc_html__( 'Class subtitle', 'cmb2' ),
+        'desc'    => esc_html__( 'Add a subtitle for the class', 'cmb2' ),
+        'id'      => $groupPrefix . 'class_subtittle',
+        'type'    => 'text',
+    ) );
+}
