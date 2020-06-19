@@ -39,6 +39,9 @@ function edc_setup(){
     /* Featured Image */
     add_theme_support( 'post-thumbnails' );
 
+    /* SEO Tags */
+    add_theme_support('title-tag');
+
     /* Nav Menus */
     register_nav_menus( array(
         'main_menu' => esc_html__('Menu Principal', 'escuelacocina') /* escuelacocina is located in styles.css Text Domain */
