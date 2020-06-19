@@ -9,6 +9,7 @@
     </h2>
     <div class="row justify-content-center">
         <?php
+        if (!empty($iconsInformation)):
         foreach($iconsInformation as $iconInformation){
         ?>
         <div class="col-md-4 text-center information">
@@ -19,6 +20,8 @@
                 <?php echo $iconInformation['description_icon']; ?>
             </p>
         </div>
-        <?php } ?>
+        <?php } else: ?> <div class="container text-center">
+            <p>Agregar íconos</p>
+        </div> <?php endif; ?>
     </div>
 </section>
