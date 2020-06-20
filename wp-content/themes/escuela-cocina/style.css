@@ -153,8 +153,10 @@ aside .card-footer a {
   color: black;
 }
 /* Blog page */
-blockquote.subtitle {
-  font-size: 1.5rem;
+blockquote.subtitle p,
+blockquote.subtitle h2,
+blockquote.subtitle h3 {
+  font-size: 1.5rem !important;
   color: #303030;
   font-style: italic;
   font-weight: 100;

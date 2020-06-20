@@ -336,3 +336,35 @@ function edc_fields_classes() {
         ),
 	) );
 }
+
+/* Group fields */
+add_action( 'cmb2_admin_init', 'edc_class_subtitle' );
+/**
+ * Hook in and add a metabox to demonstrate repeatable grouped fields
+ */
+function edc_class_subtitle() {
+    $classPrefix = 'edc_class_';
+
+	/**
+	 * Class Metabox Fields
+	 */
+	$edc_class_page = new_cmb2_box( array(
+		'id'           => $classPrefix . 'metabox',
+		'title'        => esc_html__( 'Class page info', 'cmb2' ),
+        'object_types' => array( 'page' ), // Post type
+        'context'      => 'normal',
+		'priority'     => 'high',
+		'show_names'   => true, // Show field names on the left
+		'show_on'      => array(
+            'key'      => 'page-template',
+			'value'    => 'page-classes.php'
+		),  // Specific post IDs to display this metabox
+    ) );
+
+    $edc_class_page->add_field( array(
+        'name'    => esc_html__( 'Subtitle text', 'cmb2' ),
+        'desc'    => esc_html__( 'Add a subtitle for the section', 'cmb2' ),
+        'id'      => $classPrefix . 'class_subtitle',
+        'type'    => 'text',
+    ) );
+}
