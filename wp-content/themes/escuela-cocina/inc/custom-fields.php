@@ -213,27 +213,50 @@ function edc_blog_fields() {
 /* Add fields to class post type */
 add_action( 'cmb2_admin_init', 'edc_fields_classes' );
 /**
- * Hook in and add a metabox to demonstrate repeatable grouped fields
+ * Hook in and add a metabox to demonstrate fields
  */
 function edc_fields_classes() {
-    $groupPrefix = 'edc_classes_';
+    $classPrefix = 'edc_classes_';
 
 	/**
-	 * Repeatable Field Groups
+	 * Fields
 	 */
 	$edc_classes = new_cmb2_box( array(
-		'id'           => $groupPrefix . 'metabox',
+		'id'           => $classPrefix . 'metabox',
 		'title'        => esc_html__( 'Classes description and information', 'cmb2' ),
         'object_types' => array( 'clases_cocina' ), // Post type
         'context'      => 'normal',
 		'priority'     => 'high',
 		'show_names'   => true, // Show field names on the left
     ) );
-
+    
     $edc_classes->add_field( array(
         'name'    => esc_html__( 'Class subtitle', 'cmb2' ),
         'desc'    => esc_html__( 'Add a subtitle for the class', 'cmb2' ),
-        'id'      => $groupPrefix . 'class_subtittle',
+        'id'      => $classPrefix . 'class_subtittle',
         'type'    => 'text',
     ) );
+   
+    /* Class info days */
+    $edc_classes->add_field( array(
+		'name' => esc_html__( 'Class period time information', 'cmb2' ),
+		'desc' => esc_html__( 'General informaiton about how long does the classes takes in weeks and hours', 'cmb2' ),
+		'id'   => $classPrefix . 'class_tittle',
+		'type' => 'title',
+	) );
+
+    $edc_classes->add_field( array(
+        'name'    => esc_html__( 'Class period of time', 'cmb2' ),
+        'desc'    => esc_html__( 'Add a period time for the class', 'cmb2' ),
+        'id'      => $classPrefix . 'class_period_time',
+        'type'    => 'text',
+    ) );
+
+    $edc_classes->add_field( array(
+		'name' => esc_html__( 'Class Date Picker', 'cmb2' ),
+		'desc' => esc_html__( 'Pick the start of the course', 'cmb2' ),
+		'id'   => $classPrefix . 'class_time_picker',
+		'type' => 'text_date',
+		// 'date_format' => 'Y-m-d',
+	) );
 }
