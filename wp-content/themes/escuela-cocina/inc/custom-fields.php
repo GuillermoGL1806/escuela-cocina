@@ -257,7 +257,7 @@ function edc_fields_classes() {
 		'desc' => esc_html__( 'Pick the start of the class', 'cmb2' ),
 		'id'   => $classPrefix . 'class_start_date',
 		'type' => 'text_date',
-		// 'date_format' => 'Y-m-d',
+		'date_format' => 'd-m-Y',
     ) );
     
     $edc_classes->add_field( array(
@@ -265,7 +265,7 @@ function edc_fields_classes() {
 		'desc' => esc_html__( 'Pick the finish of the class', 'cmb2' ),
 		'id'   => $classPrefix . 'class_finish_date',
 		'type' => 'text_date',
-		// 'date_format' => 'Y-m-d',
+		'date_format' => 'd-m-Y',
     ) );
     
     $edc_classes->add_field( array(
