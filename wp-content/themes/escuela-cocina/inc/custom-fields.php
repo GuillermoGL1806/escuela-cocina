@@ -257,7 +257,8 @@ function edc_fields_classes() {
 		'desc' => esc_html__( 'Pick the start of the class', 'cmb2' ),
 		'id'   => $classPrefix . 'class_start_date',
 		'type' => 'text_date',
-		'date_format' => 'd-m-Y',
+        'date_format' => 'd-m-Y',
+        'column' => true,
     ) );
     
     $edc_classes->add_field( array(
@@ -265,7 +266,8 @@ function edc_fields_classes() {
 		'desc' => esc_html__( 'Pick the finish of the class', 'cmb2' ),
 		'id'   => $classPrefix . 'class_finish_date',
 		'type' => 'text_date',
-		'date_format' => 'd-m-Y',
+        'date_format' => 'd-m-Y',
+        'column' => true,
     ) );
     
     $edc_classes->add_field( array(
@@ -273,7 +275,8 @@ function edc_fields_classes() {
 		'desc' => esc_html__( 'Select the start time of the class', 'cmb2' ),
 		'id'   => $classPrefix . 'class_start_time',
 		'type' => 'text_time',
-		// 'time_format' => 'H:i', // Set to 24hr format
+        // 'time_format' => 'H:i', // Set to 24hr format
+        'column' => true,
     ) );
     
     $edc_classes->add_field( array(
@@ -281,7 +284,8 @@ function edc_fields_classes() {
 		'desc' => esc_html__( 'Select the end time of the class', 'cmb2' ),
 		'id'   => $classPrefix . 'class_end_time',
 		'type' => 'text_time',
-		// 'time_format' => 'H:i', // Set to 24hr format
+        // 'time_format' => 'H:i', // Set to 24hr format
+        'column' => true,
     ) );
     
     /* Class conditions */
@@ -298,7 +302,8 @@ function edc_fields_classes() {
 		'id'   => $classPrefix . 'class_pricing',
 		'type' => 'text_money',
 		// 'before_field' => '£', // override '$' symbol if needed
-		// 'repeatable' => true,
+        // 'repeatable' => true,
+        'column' => true,
     ) );
     
     $edc_classes->add_field( array(
@@ -328,6 +333,6 @@ function edc_fields_classes() {
 			'post_type'			=> array( 'chefs' ),
 			'post_status'		=> array( 'publish' ),
 			'posts_per_page'	=> -1
-		)
+        ),
 	) );
 }
