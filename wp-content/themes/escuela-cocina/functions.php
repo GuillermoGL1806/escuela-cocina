@@ -2,6 +2,9 @@
 /* Add CMB2 */
 require_once dirname(__FILE__) . '/cmb2-functions.php';
 
+/* Add recicable queries  */
+require_once dirname(__FILE__) . '/inc/queries.php';
+
 /* Load cutomized fields */
 require_once dirname(__FILE__) . '/inc/custom-fields.php';
 
