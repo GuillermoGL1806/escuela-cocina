@@ -237,26 +237,82 @@ function edc_fields_classes() {
         'type'    => 'text',
     ) );
    
-    /* Class info days */
+    /* Class general information */
     $edc_classes->add_field( array(
-		'name' => esc_html__( 'Class period time information', 'cmb2' ),
-		'desc' => esc_html__( 'General informaiton about how long does the classes takes in weeks and hours', 'cmb2' ),
+		'name' => esc_html__( 'Class general information', 'cmb2' ),
+		'desc' => esc_html__( 'General information about how long does the classes takes in weeks and hours', 'cmb2' ),
 		'id'   => $classPrefix . 'class_tittle',
 		'type' => 'title',
 	) );
 
     $edc_classes->add_field( array(
         'name'    => esc_html__( 'Class period of time', 'cmb2' ),
-        'desc'    => esc_html__( 'Add a period time for the class', 'cmb2' ),
+        'desc'    => esc_html__( 'Add a period time for the class. Example: every sunday 2 hours', 'cmb2' ),
         'id'      => $classPrefix . 'class_period_time',
+        'type'    => 'text',
+    ) );
+    
+    $edc_classes->add_field( array(
+		'name' => esc_html__( 'Start date of the class', 'cmb2' ),
+		'desc' => esc_html__( 'Pick the start of the class', 'cmb2' ),
+		'id'   => $classPrefix . 'class_start_date',
+		'type' => 'text_date',
+		// 'date_format' => 'Y-m-d',
+    ) );
+    
+    $edc_classes->add_field( array(
+		'name' => esc_html__( 'End date of the class', 'cmb2' ),
+		'desc' => esc_html__( 'Pick the finish of the class', 'cmb2' ),
+		'id'   => $classPrefix . 'class_finish_date',
+		'type' => 'text_date',
+		// 'date_format' => 'Y-m-d',
+    ) );
+    
+    $edc_classes->add_field( array(
+		'name' => esc_html__( 'Start Time', 'cmb2' ),
+		'desc' => esc_html__( 'Select the start time of the class', 'cmb2' ),
+		'id'   => $classPrefix . 'class_start_time',
+		'type' => 'text_time',
+		// 'time_format' => 'H:i', // Set to 24hr format
+    ) );
+    
+    $edc_classes->add_field( array(
+		'name' => esc_html__( 'End Time', 'cmb2' ),
+		'desc' => esc_html__( 'Select the end time of the class', 'cmb2' ),
+		'id'   => $classPrefix . 'class_end_time',
+		'type' => 'text_time',
+		// 'time_format' => 'H:i', // Set to 24hr format
+    ) );
+    
+    /* Class conditions */
+    $edc_classes->add_field( array(
+		'name' => esc_html__( 'Class aditional information', 'cmb2' ),
+		'desc' => esc_html__( 'Aditional informaiton about instructors, capacity and pricing in this section', 'cmb2' ),
+		'id'   => $classPrefix . 'class_additional_info',
+		'type' => 'title',
+    ) );
+    
+    $edc_classes->add_field( array(
+		'name' => esc_html__( 'Class pricing', 'cmb2' ),
+		'desc' => esc_html__( 'Add the pricing here', 'cmb2' ),
+		'id'   => $classPrefix . 'class_pricing',
+		'type' => 'text_money',
+		// 'before_field' => '£', // override '$' symbol if needed
+		// 'repeatable' => true,
+    ) );
+    
+    $edc_classes->add_field( array(
+        'name'    => esc_html__( 'Class quota', 'cmb2' ),
+        'desc'    => esc_html__( 'Add a quota of people to be in the class', 'cmb2' ),
+        'id'      => $classPrefix . 'class_quota',
         'type'    => 'text',
     ) );
 
     $edc_classes->add_field( array(
-		'name' => esc_html__( 'Class Date Picker', 'cmb2' ),
-		'desc' => esc_html__( 'Pick the start of the course', 'cmb2' ),
-		'id'   => $classPrefix . 'class_time_picker',
-		'type' => 'text_date',
-		// 'date_format' => 'Y-m-d',
-	) );
+        'name'    => esc_html__( 'Class content', 'cmb2' ),
+        'desc'    => esc_html__( 'Add the content of the class (1 by row)', 'cmb2' ),
+        'id'      => $classPrefix . 'class_content',
+        'type'    => 'text',
+        'repeatable' => true,
+    ) );
 }
