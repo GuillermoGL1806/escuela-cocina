@@ -315,4 +315,19 @@ function edc_fields_classes() {
         'type'    => 'text',
         'repeatable' => true,
     ) );
+
+    $edc_classes->add_field( array(
+		'name'      	=> __( 'Instructors', 'cmb2' ),
+		'id'        	=> $classPrefix . 'class_instructors',
+		'type'      	=> 'post_search_ajax',
+		'desc'			=> __( 'Start typing instructors names to search them', 'cmb2' ),
+		// Optional :
+		'limit'      	=> 10, 		// Limit selection to X items only (default 1)
+		'sortable' 	 	=> true, 	// Allow selected items to be sortable (default false)
+		'query_args'	=> array(
+			'post_type'			=> array( 'chefs' ),
+			'post_status'		=> array( 'publish' ),
+			'posts_per_page'	=> -1
+		)
+	) );
 }
