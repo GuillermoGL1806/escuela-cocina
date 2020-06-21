@@ -1,40 +1,46 @@
 <?php
 get_header();
 while (have_posts()) : the_post();
-    get_template_part('template-parts/content', 'post');?>
+    get_template_part('template-parts/content', 'post');
+    printf ('<pre>%s</pre>', var_export(get_post_custom( get_the_ID()), true) );
+    $classContentList = get_post_meta(get_the_ID(), 'edc_classes_class_content', true);
+    $classQuota = get_post_meta(get_the_ID(), 'edc_classes_class_quota', true);
+    $classPricing = get_post_meta(get_the_ID(), 'edc_classes_class_pricing', true);
+    $classStartTime = get_post_meta(get_the_ID(), 'edc_classes_class_start_time', true);
+    $classEndTime = get_post_meta(get_the_ID(), 'edc_classes_class_end_time', true);
+    $classPeriodTime = get_post_meta(get_the_ID(), 'edc_classes_class_period_time', true);
+    $classStartDate = get_post_meta(get_the_ID(), 'edc_classes_class_start_date', true);
+    $classFinishDate = get_post_meta(get_the_ID(), 'edc_classes_class_finish_date', true);
+    ?>
 
 <div class="container">
     <div class="row justify-content-center mt-5">
         <div class="col-md-6">
             <h2 class="divider text-center my-3">¿Qué incluye?</h2>
+            <?php foreach($classContentList as $classContentItem){ ?>
             <ul class="list-group">
                 <li class="list-group-item list-group-item-secondary text-light">
-                    Todos los ingredientes
-                </li>
-                <li class="list-group-item list-group-item-secondary text-light">
-                    Mesas de trabajo individuales
-                </li>
-                <li class="list-group-item list-group-item-secondary text-light">
-                    Recetarios
-                </li>
-                <li class="list-group-item list-group-item-secondary text-light">
-                    Reconocimiento por completar el curso
+                    <?php echo $classContentItem; ?>
                 </li>
             </ul>
+            <?php }?>
 
             <h2 class="divider text-center my-3 mt-5">Información Extra</h2>
             <ul class="list-group">
                 <li class="list-group-item list-group-item-primary text-light">
-                    Costo de 300
+                    Costo: $<?php echo $classPricing; ?>
                 </li>
                 <li class="list-group-item list-group-item-primary text-light">
-                    20 cupos disponibles
+                    <?php echo $classQuota; ?> cupos disponibles
                 </li>
                 <li class="list-group-item list-group-item-primary text-light">
-                    Horarios 18:00 - 20:00 horas
+                    Horarios <?php echo $classStartTime . " - " . $classEndTime; ?>
                 </li>
                 <li class="list-group-item list-group-item-primary text-light">
-                    Duración 8 semanas / 2 horas cada sábado
+                    <?php echo $classPeriodTime; ?>
+                </li>
+                <li class="list-group-item list-group-item-primary text-light">
+                    Fecha de inicio: <?php echo $classStartDate; ?> Fecha de fin: <?php echo $classFinishDate; ?>
                 </li>
             </ul>
         </div>
