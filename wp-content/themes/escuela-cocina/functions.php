@@ -2,6 +2,9 @@
 /* Add CMB2 */
 require_once dirname(__FILE__) . '/cmb2-functions.php';
 
+/* Add recicable queries  */
+require_once dirname(__FILE__) . '/inc/queries.php';
+
 /* Load cutomized fields */
 require_once dirname(__FILE__) . '/inc/custom-fields.php';
 
@@ -35,9 +38,13 @@ function edc_featured_image($id) {
 function edc_setup(){
     /* Defining images size */
     add_image_size( 'mediano', 510, 340, true );
+    add_image_size( 'medium_box', 350, 350, true );
 
     /* Featured Image */
     add_theme_support( 'post-thumbnails' );
+
+    /* SEO Tags */
+    add_theme_support('title-tag');
 
     /* Nav Menus */
     register_nav_menus( array(

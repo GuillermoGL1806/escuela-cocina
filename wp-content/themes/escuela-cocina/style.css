@@ -84,16 +84,16 @@ p {
   background-size: cover;
   background-position: top center;
 }
-.top-image .content {
+.first-top-image .content {
   border-top: 1px solid white;
   border-bottom: 1px solid white;
 }
-.bottom-image .content {
+.second-top-image .content {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
 @media (min-width: 768px) {
-  .bottom-image .bg-secondary {
+  .second-top-image .bg-secondary {
     order: 2; /* Invert the order of the row .bottom-image and put bg-secondary in the second col-md-6 instead of bg-food */
   }
 }
@@ -154,11 +154,16 @@ aside .card-footer a {
 }
 /* Blog page */
 blockquote.subtitle {
-  font-size: 1.5rem;
+  border-left: 2px solid var(--primario);
+}
+blockquote.subtitle,
+blockquote.subtitle p,
+blockquote.subtitle h2,
+blockquote.subtitle h3 {
+  font-size: 1.5rem !important;
   color: #303030;
   font-style: italic;
   font-weight: 100;
-  border-left: 2px solid var(--primario);
 }
 .post-preview a {
   color: var(--primario);
@@ -225,6 +230,9 @@ blockquote.subtitle {
 .card-subtitle {
   color: var(--primario);
   font-weight: 500;
+}
+.card-img-top {
+  height: auto;
 }
 
 /* Single Class page */

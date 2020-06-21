@@ -11,7 +11,7 @@
     $contacto = get_page_by_title('Contacto');
 ?>
 <div class="container-fluid main-images">
-    <div class="row top-image image">
+    <div class="row first-top-image image">
         <div class="col-md-6 bg-primary">
             <div class="row justify-content-center align-items-center h-100">
                 <div class="col-sm-8 col-md-6">
@@ -28,8 +28,8 @@
         <div class="col-md-6 images-hero" style="background-image: url(<?php echo $imageHero1; ?>)">
         </div>
     </div>
-    <!-- main top row -->
-    <div class="row bottom-image image">
+    <!-- main first top row -->
+    <div class="row second-top-image image">
         <div class="col-md-6 bg-secondary">
             <div class="row justify-content-center align-items-center h-100">
                 <div class="col-sm-8 col-md-6">
@@ -45,17 +45,33 @@
         <!-- col-md-6 -->
         <div class="col-md-6 images-hero" style="background-image: url(<?php echo $imageHero2; ?>)"></div>
     </div>
-    <!-- main bottom row -->
+    <!-- main second top row -->
 </div>
 <!-- main container-fluid -->
 
 <?php /* create a custom query to get pagename Nosotros and display the content that we want of it */
-    $nosotros = new WP_Query('pagename=nosotros');
-    while($nosotros->have_posts()): $nosotros->the_post(  );
+    $aboutUs = new WP_Query('pagename=nosotros');
+    while($aboutUs->have_posts()): $aboutUs->the_post(  );
     get_template_part('template', 'parts/icons');
     endwhile; wp_reset_postdata();
 ?>
-
+<section class="classes mt-5 py-5">
+    <h1 class="divider text-center mb-3">Próximas clases</h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <?php edc_query_classes(3); ?>
+        </div>
+        <!-- row classes -->
+        <div class="row justify-content-end">
+            <div class="col-sm-5 col-md-3">
+                <a href="<?php echo get_permalink( get_page_by_title('Clases') ); ?>"
+                    class="btn btn-primary d-block">Ver todas las clases</a>
+            </div>
+        </div>
+    </div>
+    <!-- container classes -->
+</section>
+<!-- section classes -->
 <div class="school-subject" style="background-image: url(<?php echo $bottomImage ?>)">
     <div class="container">
         <div class="row justify-content-center align-items-center">

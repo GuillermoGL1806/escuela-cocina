@@ -209,3 +209,162 @@ function edc_blog_fields() {
         ),
     ) );
 }
+
+/* Add fields to class post type */
+add_action( 'cmb2_admin_init', 'edc_fields_classes' );
+/**
+ * Hook in and add a metabox to demonstrate fields
+ */
+function edc_fields_classes() {
+    $classPrefix = 'edc_classes_';
+
+	/**
+	 * Fields
+	 */
+	$edc_classes = new_cmb2_box( array(
+		'id'           => $classPrefix . 'metabox',
+		'title'        => esc_html__( 'Classes description and information', 'cmb2' ),
+        'object_types' => array( 'clases_cocina' ), // Post type
+        'context'      => 'normal',
+		'priority'     => 'high',
+		'show_names'   => true, // Show field names on the left
+    ) );
+    
+    $edc_classes->add_field( array(
+        'name'    => esc_html__( 'Class subtitle', 'cmb2' ),
+        'desc'    => esc_html__( 'Add a subtitle for the class', 'cmb2' ),
+        'id'      => $classPrefix . 'class_subtittle',
+        'type'    => 'text',
+    ) );
+   
+    /* Class general information */
+    $edc_classes->add_field( array(
+		'name' => esc_html__( 'Class general information', 'cmb2' ),
+		'desc' => esc_html__( 'General information about how long does the classes takes in weeks and hours', 'cmb2' ),
+		'id'   => $classPrefix . 'class_tittle',
+		'type' => 'title',
+	) );
+
+    $edc_classes->add_field( array(
+        'name'    => esc_html__( 'Class period of time', 'cmb2' ),
+        'desc'    => esc_html__( 'Add a period time for the class. Example: every sunday 2 hours', 'cmb2' ),
+        'id'      => $classPrefix . 'class_period_time',
+        'type'    => 'text',
+    ) );
+    
+    $edc_classes->add_field( array(
+		'name' => esc_html__( 'Start date of the class', 'cmb2' ),
+		'desc' => esc_html__( 'Pick the start of the class', 'cmb2' ),
+		'id'   => $classPrefix . 'class_start_date',
+		'type' => 'text_date',
+        'date_format' => 'd-m-Y',
+        'column' => true,
+    ) );
+    
+    $edc_classes->add_field( array(
+		'name' => esc_html__( 'End date of the class', 'cmb2' ),
+		'desc' => esc_html__( 'Pick the finish of the class', 'cmb2' ),
+		'id'   => $classPrefix . 'class_finish_date',
+		'type' => 'text_date',
+        'date_format' => 'd-m-Y',
+        'column' => true,
+    ) );
+    
+    $edc_classes->add_field( array(
+		'name' => esc_html__( 'Start Time', 'cmb2' ),
+		'desc' => esc_html__( 'Select the start time of the class', 'cmb2' ),
+		'id'   => $classPrefix . 'class_start_time',
+		'type' => 'text_time',
+        // 'time_format' => 'H:i', // Set to 24hr format
+        'column' => true,
+    ) );
+    
+    $edc_classes->add_field( array(
+		'name' => esc_html__( 'End Time', 'cmb2' ),
+		'desc' => esc_html__( 'Select the end time of the class', 'cmb2' ),
+		'id'   => $classPrefix . 'class_end_time',
+		'type' => 'text_time',
+        // 'time_format' => 'H:i', // Set to 24hr format
+        'column' => true,
+    ) );
+    
+    /* Class conditions */
+    $edc_classes->add_field( array(
+		'name' => esc_html__( 'Class aditional information', 'cmb2' ),
+		'desc' => esc_html__( 'Aditional informaiton about instructors, capacity and pricing in this section', 'cmb2' ),
+		'id'   => $classPrefix . 'class_additional_info',
+		'type' => 'title',
+    ) );
+    
+    $edc_classes->add_field( array(
+		'name' => esc_html__( 'Class pricing', 'cmb2' ),
+		'desc' => esc_html__( 'Add the pricing here', 'cmb2' ),
+		'id'   => $classPrefix . 'class_pricing',
+		'type' => 'text_money',
+		// 'before_field' => '£', // override '$' symbol if needed
+        // 'repeatable' => true,
+        'column' => true,
+    ) );
+    
+    $edc_classes->add_field( array(
+        'name'    => esc_html__( 'Class quota', 'cmb2' ),
+        'desc'    => esc_html__( 'Add a quota of people to be in the class', 'cmb2' ),
+        'id'      => $classPrefix . 'class_quota',
+        'type'    => 'text',
+    ) );
+
+    $edc_classes->add_field( array(
+        'name'    => esc_html__( 'Class content', 'cmb2' ),
+        'desc'    => esc_html__( 'Add the content of the class (1 by row)', 'cmb2' ),
+        'id'      => $classPrefix . 'class_content',
+        'type'    => 'text',
+        'repeatable' => true,
+    ) );
+
+    $edc_classes->add_field( array(
+		'name'      	=> __( 'Instructors', 'cmb2' ),
+		'id'        	=> $classPrefix . 'class_instructors',
+		'type'      	=> 'post_search_ajax',
+		'desc'			=> __( 'Start typing instructors names to search them', 'cmb2' ),
+		// Optional :
+		'limit'      	=> 10, 		// Limit selection to X items only (default 1)
+		'sortable' 	 	=> true, 	// Allow selected items to be sortable (default false)
+		'query_args'	=> array(
+			'post_type'			=> array( 'chefs' ),
+			'post_status'		=> array( 'publish' ),
+			'posts_per_page'	=> -1
+        ),
+	) );
+}
+
+/* Group fields */
+add_action( 'cmb2_admin_init', 'edc_class_subtitle' );
+/**
+ * Hook in and add a metabox to demonstrate repeatable grouped fields
+ */
+function edc_class_subtitle() {
+    $classPrefix = 'edc_class_';
+
+	/**
+	 * Class Metabox Fields
+	 */
+	$edc_class_page = new_cmb2_box( array(
+		'id'           => $classPrefix . 'metabox',
+		'title'        => esc_html__( 'Class page info', 'cmb2' ),
+        'object_types' => array( 'page' ), // Post type
+        'context'      => 'normal',
+		'priority'     => 'high',
+		'show_names'   => true, // Show field names on the left
+		'show_on'      => array(
+            'key'      => 'page-template',
+			'value'    => 'page-classes.php'
+		),  // Specific post IDs to display this metabox
+    ) );
+
+    $edc_class_page->add_field( array(
+        'name'    => esc_html__( 'Subtitle text', 'cmb2' ),
+        'desc'    => esc_html__( 'Add a subtitle for the section', 'cmb2' ),
+        'id'      => $classPrefix . 'class_subtitle',
+        'type'    => 'text',
+    ) );
+}
