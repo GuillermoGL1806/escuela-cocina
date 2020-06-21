@@ -38,6 +38,7 @@ function edc_featured_image($id) {
 function edc_setup(){
     /* Defining images size */
     add_image_size( 'mediano', 510, 340, true );
+    add_image_size( 'medium_box', 350, 350, true );
 
     /* Featured Image */
     add_theme_support( 'post-thumbnails' );

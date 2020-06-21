@@ -153,6 +153,10 @@ aside .card-footer a {
   color: black;
 }
 /* Blog page */
+blockquote.subtitle {
+  border-left: 2px solid var(--primario);
+}
+blockquote.subtitle,
 blockquote.subtitle p,
 blockquote.subtitle h2,
 blockquote.subtitle h3 {
@@ -160,7 +164,6 @@ blockquote.subtitle h3 {
   color: #303030;
   font-style: italic;
   font-weight: 100;
-  border-left: 2px solid var(--primario);
 }
 .post-preview a {
   color: var(--primario);

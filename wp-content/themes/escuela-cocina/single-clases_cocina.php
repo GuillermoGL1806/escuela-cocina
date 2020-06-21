@@ -2,7 +2,7 @@
 get_header();
 while (have_posts()) : the_post();
     get_template_part('template-parts/content', 'post');
-    printf ('<pre>%s</pre>', var_export(get_post_custom( get_the_ID()), true) );
+    /* printf ('<pre>%s</pre>', var_export(get_post_custom( get_the_ID()), true) ); */
     $classContentList = get_post_meta(get_the_ID(), 'edc_classes_class_content', true);
     $classQuota = get_post_meta(get_the_ID(), 'edc_classes_class_quota', true);
     $classPricing = get_post_meta(get_the_ID(), 'edc_classes_class_pricing', true);
@@ -11,6 +11,7 @@ while (have_posts()) : the_post();
     $classPeriodTime = get_post_meta(get_the_ID(), 'edc_classes_class_period_time', true);
     $classStartDate = get_post_meta(get_the_ID(), 'edc_classes_class_start_date', true);
     $classFinishDate = get_post_meta(get_the_ID(), 'edc_classes_class_finish_date', true);
+    $classInstructors = get_post_meta(get_the_ID(), 'edc_classes_class_instructors', true);
     ?>
 
 <div class="container">
@@ -50,22 +51,28 @@ while (have_posts()) : the_post();
             <h2 class="divider text-center mt-5 my-md-3">
                 Imparte
             </h2>
+            <?php $args = array(
+                'post_type' => 'chefs',
+                'post__in' => $classInstructors, /* Display only the specific posts retrieveds by the array $classInstructors */
+                'posts_per_page' => 5,
+            );
+            /* Initializing custom loop to obtain the instructor's info*/
+            $instructor = new WP_Query($args);
+            while($instructor->have_posts()): $instructor->the_post()?>
             <div class="row justify-content-center">
                 <div class="col-md-6 mb-4">
-                    <img src="img/instructor.jpg" alt="imagen instructor" class="img-fluid rounded-circle" />
+                    <?php the_post_thumbnail( 'medium_box', array('class' => 'img-fluid rounded-circle mb-4') ); ?>
                 </div>
                 <!-- grid image -->
             </div>
             <!-- row image -->
             <p class="instructor">
-                Isabelle De la Torre
+                <?php the_title(); ?>
             </p>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
-                aliquam eos minima iure eum necessitatibus rerum dolorum laudantium
-                unde. Eligendi deleniti asperiores optio soluta architecto veritatis
-                pariatur rerum laborum fuga.
+                <?php the_content(); ?>
             </p>
+            <?php endwhile; wp_reset_postdata(); ?>
         </div>
         <!-- main grid col-md-6 -->
     </div>
