@@ -24,7 +24,7 @@ while(have_posts()): the_post();
     <h1 class="divider text-center mb-3"><?php echo esc_html($subtitle);?></h1>
     <div class="container">
         <div class="row">
-            <?php edc_query_classes(1); ?>
+            <?php edc_query_classes(); ?>
         </div>
         <!-- row -->
     </div>

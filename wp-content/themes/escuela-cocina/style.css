@@ -228,6 +228,9 @@ blockquote.subtitle h3 {
   color: var(--primario);
   font-weight: 500;
 }
+.card-img-top {
+  height: auto;
+}
 
 /* Single Class page */
 .instructor {

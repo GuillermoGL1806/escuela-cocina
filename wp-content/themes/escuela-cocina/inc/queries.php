@@ -9,27 +9,34 @@ function edc_query_classes($numberOfClasses = -1){
     $classes = new WP_Query($args);
 
     while($classes->have_posts()): $classes->the_post();
-    printf ('<pre>%s</pre>', var_export(get_post_custom( get_the_ID()), true) );
+    /* printf ('<pre>%s</pre>', var_export(get_post_custom( get_the_ID()), true) ); */
+    $startDate = get_post_meta( get_the_ID() ,'edc_classes_class_start_date' , true);
+    $startTime = get_post_meta( get_the_ID() ,'edc_classes_class_end_time' , true);
+    $pricing = get_post_meta( get_the_ID() ,'edc_classes_class_pricing' , true);
+    $subtitle = get_post_meta( get_the_ID() ,'edc_classes_class_subtittle' , true);
+
     ?>
 <div class="col-md-6 col-lg-4">
     <div class="card mb-4">
-        <img src="img/clase2.jpg" alt="clase2" class="card-img-top" />
+        <?php the_post_thumbnail( 'mediano', array('class' => 'card-img-top') ); ?>
+        <!-- WP way to insert bootstrap img -->
         <div class="card-meta bg-primary p-3 text-light d-flex justify-content-between align-items-center">
-            <p class="m-0">20/Mayo/2020 18:00 hrs</p>
-            <span class="badge badge-secondary p-2">$300</span>
+            <div>
+                <p class="m-0">Fecha de inicio: <?php echo $startDate; ?></p>
+                <p class="m-0">Hora de inicio: <?php echo $startTime; ?></p>
+            </div>
+            <span class="badge badge-secondary p-2">$<?php echo $pricing; ?></span>
         </div>
         <!-- card-meta -->
         <div class="card-body">
-            <h3 class="card-title">Comida Italiana para principiantes</h3>
+            <h3 class="card-title"><?php the_title(); ?></h3>
             <p class="card-subtitle mb-2">
-                Aprende las bases de la comida italiana con este curso
+                <?php echo $subtitle; ?>
             </p>
             <p class="card-ext">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
-                ex quis quasi veritatis officia, sed consectetur ea, alias
-                laboriosam.
+                <?php echo wp_trim_words( get_the_content(), 20, $more)?>
             </p>
-            <a href="clase.html" class="btn btn-primary d-block d-md-inline">Más información</a>
+            <a href="<?php the_permalink(); ?>" class="btn btn-primary d-block d-md-inline">Más información</a>
         </div>
     </div>
     <!-- card -->
