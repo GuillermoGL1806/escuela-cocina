@@ -369,7 +369,7 @@ function edc_class_subtitle() {
     ) );
 }
 
-/* Class page fields */
+/* Gallery template fields */
 add_action( 'cmb2_admin_init', 'edc_gallery_template' );
 /**
  * Hook in and add a metabox to demonstrate repeatable grouped fields
@@ -386,8 +386,8 @@ function edc_gallery_template() {
         'object_types' => array( 'page' ), // Post type
         'context'      => 'normal',
 		'priority'     => 'high',
-		'show_names'   => true, // Show field names on the left
-		'show_on'      => array(
+        'show_names'   => true, // Show field names on the left
+        'show_on'      => array(
             'key'      => 'page-template',
 			'value'    => 'page-gallery.php'
 		),  // Specific post IDs to display this metabox
