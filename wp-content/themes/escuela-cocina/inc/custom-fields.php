@@ -392,18 +392,11 @@ function edc_gallery_template() {
 			'value'    => 'page-gallery.php'
 		),  // Specific post IDs to display this metabox
     ) );
-    
     $edc_gallery_page->add_field( array(
-        'name'    => esc_html__( 'Title Section Icons', 'cmb2' ),
-        'desc'    => esc_html__( 'Add a title for the section', 'cmb2' ),
-        'id'      => $galleryPrefix . 'icon_title',
-        'type'    => 'text',
-    ) );
-
-    $edc_gallery_page->add_field( array(
-        'name'    => esc_html__( 'Subtitle text', 'cmb2' ),
-        'desc'    => esc_html__( 'Add a subtitle for the section', 'cmb2' ),
-        'id'      => $galleryPrefix . 'class_subtitle',
-        'type'    => 'text',
-    ) );
+		'name'         => esc_html__( 'Multiple Files', 'cmb2' ),
+		'desc'         => esc_html__( 'Upload or add multiple images/attachments.', 'cmb2' ),
+		'id'           => $galleryPrefix . 'gallery',
+		'type'         => 'file_list',
+		'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
+	) );
 }
