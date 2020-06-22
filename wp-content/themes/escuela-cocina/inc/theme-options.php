@@ -4,7 +4,7 @@ add_action( 'cmb2_admin_init', 'edc_theme_featured_options' );
  * Hook in and register a metabox to handle a theme options page and adds a menu item.
  */
 function edc_theme_featured_options() {
-    $prefix = 'edc_theme';
+    $prefix = 'edc_theme_';
 	/**
 	 * Registers options page menu item and form.
 	 */
@@ -18,7 +18,7 @@ function edc_theme_featured_options() {
 		 * Several of these parameters are passed along to add_menu_page()/add_submenu_page().
 		 */
 
-		'option_key'      => 'yourprefix_theme_options', // The option key and admin menu page slug.
+		'option_key'      => $prefix . 'options', // The option key and admin menu page slug.
 		'icon_url'        => 'dashicons-edit', // Menu icon. Only applicable if 'parent_slug' is left empty.
 		// 'menu_title'      => esc_html__( 'Options', 'cmb2' ), // Falls back to 'title' (above).
 		// 'parent_slug'     => 'themes.php', // Make options page a submenu item of the themes menu.
@@ -40,10 +40,34 @@ function edc_theme_featured_options() {
 	 */
 	$cmb_options->add_field( array(
 		'name'    => esc_html__( 'Site Background Color', 'cmb2' ),
-		'desc'    => esc_html__( 'field description (optional)', 'cmb2' ),
+		'desc'    => esc_html__( 'Change the background color using this tool', 'cmb2' ),
 		'id'      => 'bg_color',
 		'type'    => 'colorpicker',
 		'default' => '#ffffff',
+    ) );
+    $cmb_options->add_field( array(
+		'name'    => esc_html__( 'Primary Color', 'cmb2' ),
+		'desc'    => esc_html__( 'Change the primary color with this tool', 'cmb2' ),
+		'id'      => 'primary_color',
+		'type'    => 'colorpicker',
+		'default' => '#f46669',
+    ) );
+    $cmb_options->add_field( array(
+		'name'    => esc_html__( 'Secondary Color', 'cmb2' ),
+		'desc'    => esc_html__( 'Change the secondary color with this tool', 'cmb2' ),
+		'id'      => 'secondary_color',
+		'type'    => 'colorpicker',
+		'default' => '#a1a045',
 	) );
-
+    $cmb_options->add_field( array(
+		'name'    => esc_html__( 'Brand Logo', 'cmb2' ),
+		'desc'    => esc_html__( 'Change the brand logo with this tool', 'cmb2' ),
+		'id'      => 'brand_logo',
+		'type'    => 'file',
+	) );$cmb_options->add_field( array(
+		'name'    => esc_html__( 'Divider image', 'cmb2' ),
+		'desc'    => esc_html__( 'Change the divider image with this tool', 'cmb2' ),
+		'id'      => 'divider_image',
+		'type'    => 'file',
+	) );
 }

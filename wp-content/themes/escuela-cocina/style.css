@@ -175,7 +175,7 @@ blockquote.subtitle h3 {
   color: var(--primario);
 }
 .comments-section {
-  background-color: #f5f5f5;
+  background-color: var(--gris);
 }
 .comments-form {
   background-color: white;
