@@ -337,7 +337,7 @@ function edc_fields_classes() {
 	) );
 }
 
-/* Group fields */
+/* Class page fields */
 add_action( 'cmb2_admin_init', 'edc_class_subtitle' );
 /**
  * Hook in and add a metabox to demonstrate repeatable grouped fields
@@ -367,4 +367,36 @@ function edc_class_subtitle() {
         'id'      => $classPrefix . 'class_subtitle',
         'type'    => 'text',
     ) );
+}
+
+/* Gallery template fields */
+add_action( 'cmb2_admin_init', 'edc_gallery_template' );
+/**
+ * Hook in and add a metabox to demonstrate repeatable grouped fields
+ */
+function edc_gallery_template() {
+    $galleryPrefix = 'edc_gallery_';
+
+	/**
+	 * Gallery Metabox Fields
+	 */
+	$edc_gallery_page = new_cmb2_box( array(
+		'id'           => $galleryPrefix . 'metabox',
+		'title'        => esc_html__( 'Gallery fields', 'cmb2' ),
+        'object_types' => array( 'page' ), // Post type
+        'context'      => 'normal',
+		'priority'     => 'high',
+        'show_names'   => true, // Show field names on the left
+        'show_on'      => array(
+            'key'      => 'page-template',
+			'value'    => 'page-gallery.php'
+		),  // Specific post IDs to display this metabox
+    ) );
+    $edc_gallery_page->add_field( array(
+		'name'         => esc_html__( 'Multiple Files', 'cmb2' ),
+		'desc'         => esc_html__( 'Upload or add multiple images/attachments.', 'cmb2' ),
+		'id'           => $galleryPrefix . 'gallery',
+		'type'         => 'file_list',
+		'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
+	) );
 }

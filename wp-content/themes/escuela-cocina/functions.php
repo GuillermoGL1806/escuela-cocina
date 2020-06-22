@@ -8,6 +8,9 @@ require_once dirname(__FILE__) . '/inc/queries.php';
 /* Load cutomized fields */
 require_once dirname(__FILE__) . '/inc/custom-fields.php';
 
+/* Add custom widgets  */
+require_once dirname(__FILE__) . '/inc/widgets.php';
+
 /* Featured images for pages */
 add_action( 'init', 'edc_featured_image' );
 function edc_featured_image($id) {
@@ -78,3 +81,16 @@ function edc_scripts(){
 
 }
 add_action( 'wp_enqueue_scripts', 'edc_scripts' );
+
+/* Widgets area */
+add_action( 'widgets_init', 'edc_widgets_sidebar' );
+function edc_widgets_sidebar(){
+    register_sidebar(array(
+        'name'          => 'Widget lateral',
+        'id'            => 'sidebar_widget',
+        'before_widget' => '<div class="widget">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="text-center text-light divider inverse">',
+        'after_title'   => '</h2>',
+    ));
+}
