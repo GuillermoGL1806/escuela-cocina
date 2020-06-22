@@ -11,7 +11,7 @@ class Foo_Widget extends WP_Widget {
 		parent::__construct(
 			'foo_widget', // Base ID
 			esc_html__( 'Classes', 'text_domain' ), // Name
-			array( 'description' => esc_html__( 'Classes Widget', 'text_domain' ), ) // Args
+			array( 'description' => esc_html__( 'Add the classes that you have created', 'text_domain' ), ) // Args
 		);
 	}
 
@@ -27,11 +27,14 @@ class Foo_Widget extends WP_Widget {
 		echo $args['before_widget'];
 		if ( ! empty( $instance['title'] ) ) {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+        }
+        if ( ! empty( $instance['numberOfClasses'] ) ) {
+			$numberOfClasses = $instance['numberOfClasses'];
 		}
         /* Creating a customized query to obtain the last classes */
         $args = array(
             'post_type'      => 'clases_cocina',
-            'posts_per_page' => '-1',
+            'posts_per_page' => $numberOfClasses,
         );
         $classesList = new WP_Query($args);
         while($classesList->have_posts()): $classesList->the_post();
@@ -67,14 +70,24 @@ class Foo_Widget extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'New title', 'text_domain' );
+        $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'New title', 'text_domain' );
+        $numberOfClasses = ! empty( $instance['numberOfClasses'] ) ? $instance['numberOfClasses'] : esc_html__( 'New numberOfClasses', 'text_domain' );
 		?>
 <p>
-    <label
-        for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'text_domain' ); ?></label>
+    <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
+        <?php esc_attr_e( 'Title:', 'text_domain' ); ?>
+    </label>
     <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
         name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
         value="<?php echo esc_attr( $title ); ?>">
+</p>
+<p>
+    <label for="<?php echo esc_attr( $this->get_field_id( 'numberOfClasses' ) ); ?>">
+        <?php esc_attr_e( 'Number of classes to display:', 'text_domain' ); ?>
+    </label>
+    <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'numberOfClasses' ) ); ?>"
+        name="<?php echo esc_attr( $this->get_field_name( 'numberOfClasses' ) ); ?>" type="number"
+        value="<?php echo esc_attr( $numberOfClasses ); ?>">
 </p>
 <?php 
 	}
@@ -92,7 +105,7 @@ class Foo_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
-
+		$instance['numberOfClasses'] = ( ! empty( $new_instance['numberOfClasses'] ) ) ? sanitize_text_field( $new_instance['numberOfClasses'] ) : '';
 		return $instance;
 	}
 
