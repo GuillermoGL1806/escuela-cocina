@@ -22,7 +22,6 @@
                         <?php else: ?>
                         <img src="<?php echo get_template_directory_uri();?>/img/logo.svg" class="img-fluid" />
                         <?php endif;?>
-
                     </a>
                 </div>
                 <!-- logo -->
@@ -33,15 +32,13 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <?php
-              $args = array(
-                  'menu_class' => 'nav nav-justified flex-column flex-md-row text-center',
-                  'container_id' => 'mainNavbar',
-                  'container_class' => 'collapse navbar-collapse justify-content-center justify-content-lg-end text-uppercase text-center',
-                  'theme_location' => 'main_menu'
-              );
-                wp_nav_menu($args)
-              ?>
-
+                        $args = array(
+                            'menu_class' => 'nav nav-justified flex-column flex-md-row text-center',
+                            'container_id' => 'mainNavbar',
+                            'container_class' => 'collapse navbar-collapse justify-content-center justify-content-lg-end text-uppercase text-center',
+                            'theme_location' => 'main_menu'
+                        );
+                          wp_nav_menu($args);?>
                     </nav>
                     <!-- navbar -->
                 </div>
