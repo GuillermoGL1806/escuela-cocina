@@ -78,3 +78,16 @@ function edc_scripts(){
 
 }
 add_action( 'wp_enqueue_scripts', 'edc_scripts' );
+
+/* Widgets area */
+add_action( 'widgets_init', 'edc_widgets_sidebar' );
+function edc_widgets_sidebar(){
+    register_sidebar(array(
+        'name'          => 'Widget lateral',
+        'id'            => 'sidebar_widget',
+        'before_widget' => '<div class="nextCourses">',
+        'after_widget'  => '</div>',
+        'before_title'  => '',
+        'after_title'   => '',
+    ));
+}
