@@ -10,8 +10,8 @@ class Foo_Widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'foo_widget', // Base ID
-			esc_html__( 'Widget Title', 'text_domain' ), // Name
-			array( 'description' => esc_html__( 'A Foo Widget', 'text_domain' ), ) // Args
+			esc_html__( 'Classes', 'text_domain' ), // Name
+			array( 'description' => esc_html__( 'Classes Widget', 'text_domain' ), ) // Args
 		);
 	}
 
@@ -28,7 +28,34 @@ class Foo_Widget extends WP_Widget {
 		if ( ! empty( $instance['title'] ) ) {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		}
-		echo esc_html__( 'Hello, World!', 'text_domain' );
+        /* Creating a customized query to obtain the last classes */
+        $args = array(
+            'post_type'      => 'clases_cocina',
+            'posts_per_page' => '-1',
+        );
+        $classesList = new WP_Query($args);
+        while($classesList->have_posts()): $classesList->the_post();
+        ?>
+<div class="card mb-4">
+    <?php the_post_thumbnail( 'mediano', array('class' => 'img-fluid') ); ?>
+    <div class="card-body">
+        <h3 class="card-title">
+            <?php the_title(); ?>
+        </h3>
+        <p class="card-subtitle m-0">
+            <?php echo get_post_meta( get_the_ID() ,'edc_classes_class_subtittle' , true); ?>
+        </p>
+    </div>
+    <!-- card-body -->
+    <div class="card-footer">
+        <a href="<?php the_permalink(); ?>">Más información</a>
+    </div>
+    <!-- card-footer -->
+</div>
+<!-- main card -->
+
+<?php
+    endwhile; wp_reset_postdata();
 		echo $args['after_widget'];
 	}
 
