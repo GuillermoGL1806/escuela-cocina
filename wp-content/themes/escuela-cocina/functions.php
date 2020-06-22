@@ -85,9 +85,9 @@ function edc_widgets_sidebar(){
     register_sidebar(array(
         'name'          => 'Widget lateral',
         'id'            => 'sidebar_widget',
-        'before_widget' => '<div class="nextCourses">',
+        'before_widget' => '<div class="widget">',
         'after_widget'  => '</div>',
-        'before_title'  => '',
-        'after_title'   => '',
+        'before_title'  => '<h2 class="text-center text-light divider inverse">',
+        'after_title'   => '</h2>',
     ));
 }
