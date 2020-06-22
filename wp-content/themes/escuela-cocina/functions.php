@@ -8,6 +8,9 @@ require_once dirname(__FILE__) . '/inc/queries.php';
 /* Load cutomized fields */
 require_once dirname(__FILE__) . '/inc/custom-fields.php';
 
+/* Add custom widgets  */
+require_once dirname(__FILE__) . '/inc/widgets.php';
+
 /* Featured images for pages */
 add_action( 'init', 'edc_featured_image' );
 function edc_featured_image($id) {
