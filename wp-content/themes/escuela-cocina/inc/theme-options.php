@@ -51,6 +51,13 @@ function edc_theme_featured_options() {
 		'id'      => 'primary_color',
 		'type'    => 'colorpicker',
 		'default' => '#f46669',
+	) );
+	$cmb_options->add_field( array(
+		'name'    => esc_html__( 'Primary Color Hover', 'cmb2' ),
+		'desc'    => esc_html__( 'Change the primary color hover effect with this tool', 'cmb2' ),
+		'id'      => 'primary_color_hover',
+		'type'    => 'colorpicker',
+		'default' => '#f54749',
     ) );
     $cmb_options->add_field( array(
 		'name'    => esc_html__( 'Secondary Color', 'cmb2' ),
@@ -70,4 +77,86 @@ function edc_theme_featured_options() {
 		'id'      => 'divider_image',
 		'type'    => 'file',
 	) );
+}
+
+/* Dinamic Colors and dividers images */
+add_action('wp_footer', 'edc_theme_options_styles');
+function edc_theme_options_styles(){
+	$options = get_option('edc_theme_options');
+
+	$primaryColor = $options['primary_color'];
+	$primaryColorHover = $options['primary_color_hover'];
+	$secondaryColor = $options['secondary_color'];
+	$dividerImage = $options['divider_image'];
+
+	/* If the user haven't changed the divider image, the template will use the default divider image */
+	if(!isset($dividerImage)){
+		$dividerImage = get_template_directory_uri() . '/img/separador.png';
+	}
+
+	/* Registering the new inline styles */
+	wp_register_style('custom-theme-options', false);
+	wp_enqueue_style('custom-theme-options');
+
+	$customCss = "
+		/* BG Primary color */
+		.btn-primary,
+		.bg-primary,
+		.list-group-item-primary,
+		.comment-respond .submit,
+		.page-link:hover {
+			background-color: {$primaryColor}!important;
+		}
+		/* BG Secondary color */
+		.bg-secondary,
+		.badge-secondary,
+		.list-group-item-secondary,
+		aside .card-footer {
+			background-color: {$secondaryColor}!important;
+		}
+		/* Primary Color */
+		.header .nav-link:hover,
+		.header .current_page_item .nav-link,
+		aside .card-subtitle,
+		.post-preview a,
+		.post-content .post-meta span,
+		.comment-respond a,
+		.comment-list .comment-body .reply a,
+		.card-subtitle,
+		.instructor,
+		.page-link,
+		.page-item a,
+		.footer .nav-link:hover,
+		.footer .nav-link.active {
+			color: {$primaryColor}!important;
+		}
+		/* Border bottom colors */
+		.header .current_page_item .nav-link {
+			border-bottom: 2px solid {$primaryColor}!important;
+		}
+		.footer {
+			border-bottom: 10px solid {$primaryColor}!important;
+		}
+		/* Border top colors */
+		.footer .container {
+			border-top: 1px solid {$primaryColor}!important;
+		}
+		/* Border left colors */
+		blockquote.subtitle {
+			border-left: 2px solid {$primaryColor}!important;
+		}
+		/* Border color */
+		.btn-primary {
+			border-color: {$primaryColor}!important;
+		}
+		/* Primary Hover */
+		.post-content .btn-primary:hover {
+			background-color: {$primaryColorHover}!important;
+			barder-color: {$primaryColorHover}!important;
+		}
+		.divider::after{
+			background-image: url({$dividerImage})!important;
+		}
+	";
+	wp_add_inline_style('custom-theme-options',  $customCss);
 }

@@ -11,9 +11,6 @@ require_once dirname(__FILE__) . '/inc/custom-fields.php';
 /* Add custom widgets  */
 require_once dirname(__FILE__) . '/inc/widgets.php';
 
-/* Add theme featured options settings  */
-require_once dirname(__FILE__) . '/inc/theme-options.php';
-
 /* Featured images for pages */
 add_action( 'init', 'edc_featured_image' );
 function edc_featured_image($id) {
@@ -97,3 +94,6 @@ function edc_widgets_sidebar(){
         'after_title'   => '</h2>',
     ));
 }
+
+/* Add theme featured options settings  */
+require_once dirname(__FILE__) . '/inc/theme-options.php';
