@@ -16,6 +16,7 @@
   --primario: #f46669;
   --secundario: #a1a045;
   --gris: #f5f5f5;
+  --primarioHover: #f54749;
 }
 body {
   font-family: sans-serif;
@@ -47,8 +48,8 @@ p {
   border-color: var(--primario);
 }
 .btn-primary:hover {
-  background-color: #f54749;
-  border-color: #f54749;
+  background-color: var(--primarioHover);
+  border-color: var(--primarioHover);
 }
 .bg-primary,
 .list-group-item-primary {
@@ -168,6 +169,12 @@ blockquote.subtitle h3 {
 .post-preview a {
   color: var(--primario);
 }
+.post-content .btn-primary {
+  color: white !important;
+}
+.post-content .btn-primary:hover {
+  color: var(--primarioHover) !important;
+}
 .post-content .post-meta p {
   font-weight: 700;
 }
@@ -175,7 +182,7 @@ blockquote.subtitle h3 {
   color: var(--primario);
 }
 .comments-section {
-  background-color: #f5f5f5;
+  background-color: var(--gris);
 }
 .comments-form {
   background-color: white;
@@ -266,10 +273,6 @@ blockquote.subtitle h3 {
 }
 .footer .nav-link:hover {
   color: var(--primario);
-}
-.footer .nav-link.active {
-  color: var(--primario);
-  border-bottom: 2px solid var(--primario);
 }
 .copyright {
   font-weight: 700;
