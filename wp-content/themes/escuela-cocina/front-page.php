@@ -59,7 +59,12 @@
     <h1 class="divider text-center mb-3">Próximas clases</h1>
     <div class="container">
         <div class="row justify-content-center">
-            <?php edc_query_classes(3); ?>
+            <?php
+            $options = get_option('edc_theme_options');
+            if(isset($options['number_clases'])): edc_query_classes($options['number_clases']);
+            else: edc_query_classes(3);
+            endif
+            ?>
         </div>
         <!-- row classes -->
         <div class="row justify-content-end">

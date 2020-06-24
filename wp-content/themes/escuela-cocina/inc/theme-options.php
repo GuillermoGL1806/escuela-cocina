@@ -39,11 +39,28 @@ function edc_theme_featured_options() {
 	 * Prefix is not needed.
 	 */
 	$cmb_options->add_field( array(
-		'name'    => esc_html__( 'Site Background Color', 'cmb2' ),
-		'desc'    => esc_html__( 'Change the background color using this tool', 'cmb2' ),
-		'id'      => 'bg_color',
-		'type'    => 'colorpicker',
-		'default' => '#ffffff',
+		'name'    => esc_html__( 'Brand Logo', 'cmb2' ),
+		'desc'    => esc_html__( 'Change the brand logo with this tool', 'cmb2' ),
+		'id'      => 'brand_logo',
+		'type'    => 'file',
+	) );
+	$cmb_options->add_field( array(
+		'name'    => esc_html__( 'Divider image', 'cmb2' ),
+		'desc'    => esc_html__( 'Change the divider image with this tool', 'cmb2' ),
+		'id'      => 'divider_image',
+		'type'    => 'file',
+	) );
+	$cmb_options->add_field( array(
+		'name'    => esc_html__( 'Divider image in negative', 'cmb2' ),
+		'desc'    => esc_html__( 'Change the negative divider image with this tool', 'cmb2' ),
+		'id'      => 'negative_divider_image',
+		'type'    => 'file',
+	) );
+	$cmb_options->add_field( array(
+		'name'    => esc_html__( 'Number of classes in Main page', 'cmb2' ),
+		'desc'    => esc_html__( 'Type number of classes to display in the front page, example 2 will display to classes in the front page', 'cmb2' ),
+		'id'      => 'number_clases',
+		'type'    => 'text',
     ) );
     $cmb_options->add_field( array(
 		'name'    => esc_html__( 'Primary Color', 'cmb2' ),
@@ -65,25 +82,7 @@ function edc_theme_featured_options() {
 		'id'      => 'secondary_color',
 		'type'    => 'colorpicker',
 		'default' => '#a1a045',
-	) );
-    $cmb_options->add_field( array(
-		'name'    => esc_html__( 'Brand Logo', 'cmb2' ),
-		'desc'    => esc_html__( 'Change the brand logo with this tool', 'cmb2' ),
-		'id'      => 'brand_logo',
-		'type'    => 'file',
-	) );
-	$cmb_options->add_field( array(
-		'name'    => esc_html__( 'Divider image', 'cmb2' ),
-		'desc'    => esc_html__( 'Change the divider image with this tool', 'cmb2' ),
-		'id'      => 'divider_image',
-		'type'    => 'file',
-	) );
-	$cmb_options->add_field( array(
-		'name'    => esc_html__( 'Divider image in negative', 'cmb2' ),
-		'desc'    => esc_html__( 'Change the negative divider image with this tool', 'cmb2' ),
-		'id'      => 'negative_divider_image',
-		'type'    => 'file',
-	) );
+	) );    
 }
 
 /* Dinamic Colors and dividers images */
