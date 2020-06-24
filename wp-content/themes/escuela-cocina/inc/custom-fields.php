@@ -101,15 +101,8 @@ function edc_icon_section() {
 		'show_on'      => array(
             'key'      => 'page-template',
 			'value'    => 'page-icons.php'
-		),  // Specific post IDs to display this metabox
+        ),  // Specific post IDs to display this metabox
 	) );
-    
-    $edc_icons->add_field( array(
-        'name'    => esc_html__( 'Title Section Icons', 'cmb2' ),
-        'desc'    => esc_html__( 'Add a title for the section', 'cmb2' ),
-        'id'      => $groupPrefix . 'icon_title',
-        'type'    => 'text',
-    ) );
 
 	// $group_field_id is the field id string, so in this case: 'yourprefix_group_demo'
 	$group_field_id = $edc_icons->add_field( array(
@@ -122,7 +115,7 @@ function edc_icon_section() {
 			'remove_button'  => esc_html__( 'Remove Icon', 'cmb2' ),
 			'sortable'       => true,
 			// 'closed'      => true, // true to have the groups closed by default
-			// 'remove_confirm' => esc_html__( 'Are you sure you want to remove?', 'cmb2' ), // Performs confirmation before removing group.
+			'remove_confirm' => esc_html__( 'Are you sure you want to remove?', 'cmb2' ), // Performs confirmation before removing group.
 		),
 	) );
 
