@@ -1,7 +1,7 @@
 <?php get_header(); 
   if (have_posts() ) :
     while (have_posts()) : the_post();
-    /* printf ('<pre>%s</pre>', var_export(get_post_custom( get_the_ID()), true) ); debugging*/
+    //printf ('<pre>%s</pre>', var_export(get_post_custom( get_the_ID()), true) );
     $textHero1 = get_post_meta( get_the_ID(), 'homepage_top_text_1', true);
     $textHero2 = get_post_meta( get_the_ID(), 'homepage_top_text_2', true);
     $imageHero1 = get_post_meta( get_the_ID(), 'homepage_image_1', true);

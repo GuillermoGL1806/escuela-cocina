@@ -155,7 +155,7 @@ aside .card-footer a {
 }
 /* Blog page */
 blockquote.subtitle {
-  border-left: 2px solid var(--primario);
+  border-left: 2px solid var(--primario) !important;
 }
 blockquote.subtitle,
 blockquote.subtitle p,
@@ -173,7 +173,7 @@ blockquote.subtitle h3 {
   color: white !important;
 }
 .post-content .btn-primary:hover {
-  color: var(--primarioHover) !important;
+  color: white;
 }
 .post-content .post-meta p {
   font-weight: 700;

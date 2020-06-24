@@ -71,10 +71,17 @@ function edc_theme_featured_options() {
 		'desc'    => esc_html__( 'Change the brand logo with this tool', 'cmb2' ),
 		'id'      => 'brand_logo',
 		'type'    => 'file',
-	) );$cmb_options->add_field( array(
+	) );
+	$cmb_options->add_field( array(
 		'name'    => esc_html__( 'Divider image', 'cmb2' ),
 		'desc'    => esc_html__( 'Change the divider image with this tool', 'cmb2' ),
 		'id'      => 'divider_image',
+		'type'    => 'file',
+	) );
+	$cmb_options->add_field( array(
+		'name'    => esc_html__( 'Divider image in negative', 'cmb2' ),
+		'desc'    => esc_html__( 'Change the negative divider image with this tool', 'cmb2' ),
+		'id'      => 'negative_divider_image',
 		'type'    => 'file',
 	) );
 }
@@ -88,10 +95,23 @@ function edc_theme_options_styles(){
 	$primaryColorHover = $options['primary_color_hover'];
 	$secondaryColor = $options['secondary_color'];
 	$dividerImage = $options['divider_image'];
+	$negativeDividerImage = $options['negative_divider_image'];
 
 	/* If the user haven't changed the divider image, the template will use the default divider image */
 	if(!isset($dividerImage)){
 		$dividerImage = get_template_directory_uri() . '/img/separador.png';
+	}
+	if(!isset($negativeDividerImage)){
+		$negativeDividerImage = get_template_directory_uri() . '/img/separador-inverso.png';
+	}
+	if(!isset($primaryColor)){
+		$primaryColor = "#f46669";
+	}
+	if(!isset($primaryColorHover)){
+		$primaryColorHover = "#f54749";
+	}
+	if(!isset($secondaryColor)){
+		$secondaryColor = "#a1a045";
 	}
 
 	/* Registering the new inline styles */
@@ -154,8 +174,12 @@ function edc_theme_options_styles(){
 			background-color: {$primaryColorHover}!important;
 			barder-color: {$primaryColorHover}!important;
 		}
+		/* Divider Images */
 		.divider::after{
 			background-image: url({$dividerImage})!important;
+		}
+		.inverse::after{
+			background-image: url({$negativeDividerImage})!important;
 		}
 	";
 	wp_add_inline_style('custom-theme-options',  $customCss);
