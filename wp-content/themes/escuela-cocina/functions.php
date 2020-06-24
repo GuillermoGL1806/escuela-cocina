@@ -94,3 +94,6 @@ function edc_widgets_sidebar(){
         'after_title'   => '</h2>',
     ));
 }
+
+/* Add theme featured options settings  */
+require_once dirname(__FILE__) . '/inc/theme-options.php';

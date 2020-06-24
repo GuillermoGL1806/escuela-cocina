@@ -1,15 +1,15 @@
 <?php
 /**
- * Adds Foo_Widget widget.
+ * Adds Class_Widget widget.
  */
-class Foo_Widget extends WP_Widget {
+class Class_Widget extends WP_Widget {
 
 	/**
 	 * Register widget with WordPress.
 	 */
 	function __construct() {
 		parent::__construct(
-			'foo_widget', // Base ID
+			'class_widget', // Base ID
 			esc_html__( 'Classes', 'text_domain' ), // Name
 			array( 'description' => esc_html__( 'Add the classes that you have created', 'text_domain' ), ) // Args
 		);
@@ -109,10 +109,10 @@ class Foo_Widget extends WP_Widget {
 		return $instance;
 	}
 
-} // class Foo_Widget
+} // class Class_Widget
 
-// register Foo_Widget widget
-function register_foo_widget() {
-    register_widget( 'Foo_Widget' );
+// register class_Widget widget
+function register_class_widget() {
+    register_widget( 'Class_Widget' );
 }
-add_action( 'widgets_init', 'register_foo_widget' );
+add_action( 'widgets_init', 'register_class_widget' );

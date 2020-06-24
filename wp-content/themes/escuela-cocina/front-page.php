@@ -1,7 +1,7 @@
 <?php get_header(); 
   if (have_posts() ) :
     while (have_posts()) : the_post();
-    /* printf ('<pre>%s</pre>', var_export(get_post_custom( get_the_ID()), true) ); debugging*/
+    //printf ('<pre>%s</pre>', var_export(get_post_custom( get_the_ID()), true) );
     $textHero1 = get_post_meta( get_the_ID(), 'homepage_top_text_1', true);
     $textHero2 = get_post_meta( get_the_ID(), 'homepage_top_text_2', true);
     $imageHero1 = get_post_meta( get_the_ID(), 'homepage_image_1', true);
@@ -59,7 +59,13 @@
     <h1 class="divider text-center mb-3">Próximas clases</h1>
     <div class="container">
         <div class="row justify-content-center">
-            <?php edc_query_classes(3); ?>
+            <?php
+            $options = get_option('edc_theme_options');
+            $numberOfClasses = (int) $options['number_clases'];
+            if(isset($options['number_clases'])): edc_query_classes($numberOfClasses);
+            else: edc_query_classes(3);
+            endif
+            ?>
         </div>
         <!-- row classes -->
         <div class="row justify-content-end">
