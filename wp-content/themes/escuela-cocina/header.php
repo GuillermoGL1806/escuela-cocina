@@ -20,7 +20,7 @@
                         <?php if(isset($options['brand_logo'])):?>
                         <img src="<?php echo $options['brand_logo'];?>" class="img-fluid" />
                         <?php else: ?>
-                        <img src="<?php echo get_template_directory_uri();?>/img/logo.svg" class="img-fluid" />
+                        <img src="<?php echo get_template_directory_uri();?>/img/logo.png" class="img-fluid" />
                         <?php endif;?>
                     </a>
                 </div>

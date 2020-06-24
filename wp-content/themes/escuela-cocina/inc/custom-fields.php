@@ -110,7 +110,7 @@ function edc_icon_section() {
 		'type'        => 'group',
 		'description' => esc_html__( 'Add options if is necessary', 'cmb2' ),
 		'options'     => array(
-			'group_title'    => esc_html__( 'Icon charactewith description {#}', 'cmb2' ), // {#} gets replaced by row number
+			'group_title'    => esc_html__( 'Icon characteristics with description {#}', 'cmb2' ), // {#} gets replaced by row number
 			'add_button'     => esc_html__( 'Add Another Icon', 'cmb2' ),
 			'remove_button'  => esc_html__( 'Remove Icon', 'cmb2' ),
 			'sortable'       => true,
@@ -125,6 +125,14 @@ function edc_icon_section() {
 	 *
 	 * The parent field's id needs to be passed as the first argument.
 	 */
+
+	$edc_icons->add_group_field( $group_field_id, array(
+        'name' => esc_html__( 'Icon Image', 'cmb2' ),
+        'description' => esc_html__( 'Add an image for this icon', 'cmb2' ),
+		'id'   => 'image_icon',
+		'type' => 'file',
+    ) );
+    
 	$edc_icons->add_group_field( $group_field_id, array(
         'name'       => esc_html__( 'Icon Title', 'cmb2' ),
         'description' => esc_html__( 'Add a title for this icon', 'cmb2' ),
@@ -140,19 +148,11 @@ function edc_icon_section() {
 		'type'        => 'textarea_small',
 	) );
 
-	$edc_icons->add_group_field( $group_field_id, array(
-        'name' => esc_html__( 'Icon Image', 'cmb2' ),
-        'description' => esc_html__( 'Add an image for this icon', 'cmb2' ),
-		'id'   => 'image_icon',
-		'type' => 'file',
-	) );
-
 	/* $edc_icons->add_group_field( $group_field_id, array(
 		'name' => esc_html__( 'Image Caption', 'cmb2' ),
 		'id'   => 'image_caption',
 		'type' => 'text',
 	) ); */
-
 }
 
 /* Blog */
