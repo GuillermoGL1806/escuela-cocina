@@ -61,7 +61,8 @@
         <div class="row justify-content-center">
             <?php
             $options = get_option('edc_theme_options');
-            if(isset($options['number_clases'])): edc_query_classes($options['number_clases']);
+            $numberOfClasses = (int) $options['number_clases'];
+            if(isset($options['number_clases'])): edc_query_classes($numberOfClasses);
             else: edc_query_classes(3);
             endif
             ?>
